@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact & Location | Providence Multi-Specialty Hospital Asokoro</title>
+  <meta name="description" content="Contact Providence Hospital Asokoro. Find our location, emergency contacts, department lines, and visiting hours." />
+
+  <!-- 🔗 Preconnect for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- ✏️ Custom Styles (Minimal - Only essentials) -->
+  <style>
+    /* Material Icons */
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      user-select: none;
+      vertical-align: middle;
+    }
+    
+    /* Scroll Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+      will-change: opacity, transform;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Glass Effect for Info Card */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    /* Skip Link for Accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #1c0060;
+      color: white;
+      padding: 8px 16px;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+  </style>
+
+  <!-- 🎨 Tailwind Configuration (Standardized) -->
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            // Primary palette
+            primary: "#1c0060",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#e6deff",
+            "primary-fixed-dim": "#cbbeff",
+            "primary-container": "#321684",
+            "on-primary-container": "#9c88f4",
+            "on-primary-fixed": "#1d0061",
+            "on-primary-fixed-variant": "#4a339c",
+            
+            // Secondary palette
+            secondary: "#006590",
+            "on-secondary": "#ffffff",
+            "secondary-fixed": "#c8e6ff",
+            "secondary-fixed-dim": "#88ceff",
+            "secondary-container": "#2fb8ff",
+            "on-secondary-container": "#004666",
+            "on-secondary-fixed": "#001e2e",
+            "on-secondary-fixed-variant": "#004c6e",
+            
+            // Tertiary palette
+            tertiary: "#1a1a22",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#e4e1ed",
+            "tertiary-fixed-dim": "#c7c5d0",
+            "tertiary-container": "#2f2f38",
+            "on-tertiary-container": "#9896a1",
+            "on-tertiary-fixed": "#1b1b23",
+            "on-tertiary-fixed-variant": "#46464f",
+            
+            // Surface & Background
+            background: "#f8f9ff",
+            "on-background": "#0b1c30",
+            surface: "#f8f9ff",
+            "on-surface": "#0b1c30",
+            "surface-variant": "#d3e4fe",
+            "on-surface-variant": "#484552",
+            "surface-bright": "#f8f9ff",
+            "surface-dim": "#cbdbf5",
+            "surface-container": "#e5eeff",
+            "surface-container-low": "#eff4ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#dce9ff",
+            "surface-container-highest": "#d3e4fe",
+            "inverse-surface": "#213145",
+            "inverse-on-surface": "#eaf1ff",
+            "inverse-primary": "#cbbeff",
+            
+            // Utility colors
+            outline: "#797583",
+            "outline-variant": "#cac4d4",
+            error: "#ba1a1a",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "surface-tint": "#624db5",
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px",
+          },
+          spacing: {
+            "margin-desktop": "48px",
+            "margin-mobile": "16px",
+            "stack-sm": "8px",
+            "stack-md": "16px",
+            "stack-lg": "32px",
+            gutter: "24px",
+            unit: "4px",
+          },
+          fontFamily: {
+            "headline-xl": ["Poppins", "sans-serif"],
+            "headline-lg": ["Poppins", "sans-serif"],
+            "headline-lg-mobile": ["Poppins", "sans-serif"],
+            "headline-md": ["Poppins", "sans-serif"],
+            "body-lg": ["Poppins", "sans-serif"],
+            "body-md": ["Poppins", "sans-serif"],
+            "body-sm": ["Poppins", "sans-serif"],
+            "label-lg": ["Poppins", "sans-serif"],
+            "label-md": ["Poppins", "sans-serif"],
+          },
+          fontSize: {
+            "headline-xl": ["40px", { lineHeight: "52px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "600" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-sm": ["16px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-lg": ["14px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", fontWeight: "500" }],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+
+  <!-- ♿ Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+   <!-- 🚨 Emergency Banner -->
+  <div class="bg-primary text-on-primary py-2 px-margin-mobile md:px-margin-desktop flex justify-between items-center text-[12px] font-medium sticky top-0 z-[60]">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-[18px]">emergency</span>
+      <span>Emergency: 0800-PROVIDENCE</span>
+    </div>
+    <div class="hidden md:block">Asokoro • Abuja • Nigeria</div>
+  </div>
+
+  <!-- 🧭 Header / Navigation -->
+  <header class="bg-surface/90 backdrop-blur-md sticky top-[36px] z-50 border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+    <nav class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
+      
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2" aria-label="Providence Hospital Home">
+        <img 
+          src="/images/Providence logo.png" 
+          alt="Providence Hospital Logo" 
+          class="h-10 w-auto object-contain"
+          loading="eager"
+        />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8" role="menubar">
+        <a class="text-on-surface-variant font-medium font-body-md hover:text-primary transition-colors" href="/home/index.html" role="menuitem">Home</a>
+        <a class="text-on-surface-variant font-medium font-body-md hover:text-primary transition-colors" href="/services/services.html" role="menuitem">Services</a>
+        <a class="text-on-surface-variant font-medium font-body-md hover:text-primary transition-colors" href="/about/about.html" role="menuitem">About Us</a>
+        <a class="text-primary border-b-2 border-primary pb-1 font-semibold font-body-md" href="/contact/contact.html" role="menuitem" aria-current="page">Contact</a>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-4">
+        <a 
+          class="bg-primary text-on-primary px-4 md:px-6 py-2.5 rounded-full font-label-md text-label-md hover:opacity-90 transition-all flex items-center gap-2 shadow-lg hover:shadow-primary/20" 
+          href="https://wa.me/#"
+          aria-label="Contact us via WhatsApp"
+        >
+          <span class="hidden sm:inline">Speak to Someone</span>
+          <span class="sm:hidden">Contact</span>
+        </a>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="md:hidden text-primary p-2" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="material-symbols-outlined text-[28px]">menu</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 📱 Mobile Navigation Sidebar -->
+  <div 
+    class="fixed inset-y-0 right-0 w-64 bg-surface z-[70] shadow-2xl transform translate-x-full transition-transform duration-300 md:hidden" 
+    id="mobile-menu"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Mobile navigation"
+  >
+    <div class="flex flex-col h-full py-6">
+      <!-- Header -->
+      <div class="px-6 mb-8 flex justify-between items-center">
+        <span class="font-headline-md text-primary font-bold">Providence</span>
+        <button class="text-primary p-1" id="close-menu-btn" aria-label="Close menu">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="flex flex-col gap-2" role="menu">
+        <a class="text-on-surface-variant hover:bg-surface-container mx-4 flex items-center gap-4 px-4 py-3 rounded-lg transition-colors font-medium" href="/home/index.html" role="menuitem">
+          <span class="material-symbols-outlined">home</span> Home
+        </a>
+        <a class="text-on-surface-variant hover:bg-surface-container mx-4 flex items-center gap-4 px-4 py-3 rounded-lg transition-colors font-medium" href="/services/services.html" role="menuitem">
+          <span class="material-symbols-outlined">medical_services</span> Services
+        </a>
+        <a class="text-on-surface-variant hover:bg-surface-container mx-4 flex items-center gap-4 px-4 py-3 rounded-lg transition-colors font-medium" href="/about/about.html" role="menuitem">
+          <span class="material-symbols-outlined">info</span> About Us
+        </a>
+        <a class="bg-primary-fixed text-on-primary-fixed mx-4 flex items-center gap-4 px-4 py-3 rounded-lg font-medium" href="/contact/contact.html" role="menuitem" aria-current="page">
+          <span class="material-symbols-outlined">contact_support</span> Contact
+        </a>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="mt-auto px-4 pb-4">
+        <a 
+          class="w-full bg-primary text-on-primary py-3 rounded-xl flex items-center justify-center gap-2 font-semibold" 
+          href="https://wa.me/#"
+          role="button"
+        >
+          <span class="material-symbols-outlined">chat</span> Speak to Someone
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay for mobile menu -->
+  <div class="fixed inset-0 bg-black/30 backdrop-blur-sm z-[65] hidden md:hidden" id="menu-overlay" aria-hidden="true"></div>
+
+  <!-- 📋 Main Content -->
+  <main id="main-content" class="max-w-[1280px] mx-auto">
+
+    <!-- 🗺️ Interactive Map Hero Section -->
+    <section class="relative w-full h-[450px] md:h-[600px] mt-20 md:mt-24 overflow-hidden bg-surface-container" aria-label="Hospital location map">
+      
+      <!-- Google Maps Embed -->
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.1000779211295!2d7.524866975019206!3d9.054635591007743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0907d52ed5b5%3A0x7685bcf31c18dc3c!2sProvidence%20Multi-Specialty%20Hospital!5e0!3m2!1sen!2sng!4v1779707710251!5m2!1sen!2sng" 
+        class="absolute inset-0 w-full h-full border-0 grayscale-[0.2] contrast-[1.05]"
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Providence Hospital Location Map"
+      ></iframe>
+
+      <!-- Info Card (Floating over Map) -->
+      <div class="relative z-10 max-w-[1280px] mx-auto h-full px-margin-mobile md:px-margin-desktop flex items-center pointer-events-none">
+        <div class="glass-card p-6 md:p-10 rounded-xl max-w-lg shadow-2xl reveal active w-full mx-4 md:mx-0 pointer-events-auto">
+          <h1 class="text-headline-lg text-primary mb-4">Providence Asokoro</h1>
+          <p class="text-on-surface-variant mb-6 md:mb-8 font-body-md">
+            Our flagship multi-specialty facility located in the prestigious Asokoro district, offering comprehensive healthcare with unparalleled expertise.
+          </p>
+          <div class="flex flex-col gap-4">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary mt-1 flex-shrink-0" aria-hidden="true">location_on</span>
+              <div>
+                <p class="font-bold text-on-surface">Location address</p>
+                <p class="text-body-sm text-on-surface-variant">No 16, Mary Slessor Street, off Uzo Udoma Street,Asokoro, FCT Abuja</p>
+              </div>
+            </div>
+            <a 
+              href="https://maps.google.com/?q=Providence+Multi-Specialty+Hospital+Asokoro"
+              target="_blank"
+              class="mt-2 flex items-center justify-center gap-2 bg-secondary text-on-secondary px-6 md:px-8 py-3.5 rounded-xl font-label-md hover:bg-primary transition-all shadow-lg active:scale-95 w-full md:w-auto"
+              aria-label="Get directions to Providence Hospital Asokoro"
+            >
+              <span class="material-symbols-outlined" aria-hidden="true">directions</span>
+              Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📞 Quick Contact Cards -->
+    <section class="py-16 md:py-20 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto" aria-labelledby="contact-heading">
+      <h2 id="contact-heading" class="sr-only">Quick Contact Options</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-gutter">
+        
+        <!-- Emergency -->
+        <article class="bg-error-container p-6 md:p-8 rounded-xl border border-error/10 hover:shadow-xl transition-all reveal active">
+          <div class="w-14 h-14 bg-on-error-container/10 rounded-full flex items-center justify-center mb-6 flex-shrink-0">
+            <span class="material-symbols-outlined text-on-error-container text-3xl" aria-hidden="true">medical_services</span>
+          </div>
+          <h3 class="text-headline-md text-on-error-container mb-2">Emergency 24/7</h3>
+          <p class="text-on-error-container/80 mb-6 font-body-sm">Dedicated trauma and emergency response unit at Asokoro.</p>
+          <a 
+            class="text-headline-md font-bold text-on-error-container block hover:underline" 
+            href="tel:+2349088991164"
+            aria-label="Call emergency line: +234 90 8899 1164"
+          >
+            +234 90 8899 1164
+          </a>
+        </article>
+
+        <!-- WhatsApp -->
+        <article class="bg-secondary-container p-6 md:p-8 rounded-xl border border-secondary/10 hover:shadow-xl transition-all reveal active">
+          <div class="w-14 h-14 bg-on-secondary-container/10 rounded-full flex items-center justify-center mb-6 flex-shrink-0">
+            <span class="material-symbols-outlined text-on-secondary-container text-3xl" aria-hidden="true">chat</span>
+          </div>
+          <h3 class="text-headline-md text-on-secondary-container mb-2">WhatsApp Us</h3>
+          <p class="text-on-secondary-container/80 mb-6 font-body-sm">Fastest way for appointment booking and general inquiries.</p>
+          <a 
+            class="text-headline-md font-bold text-on-secondary-container block hover:underline" 
+            href="https://wa.me/2349088991164"
+            aria-label="Chat on WhatsApp: +234 908 899 1164"
+          >
+            +234 908 899 1164
+          </a>
+        </article>
+
+        <!-- Email -->
+        <article class="bg-primary-fixed p-6 md:p-8 rounded-xl border border-primary/10 hover:shadow-xl transition-all reveal active">
+          <div class="w-14 h-14 bg-on-primary-fixed-variant/10 rounded-full flex items-center justify-center mb-6 flex-shrink-0">
+            <span class="material-symbols-outlined text-on-primary-fixed-variant text-3xl" aria-hidden="true">alternate_email</span>
+          </div>
+          <h3 class="text-headline-md text-on-primary-fixed-variant mb-2">Digital Desk</h3>
+          <p class="text-on-primary-fixed-variant/80 mb-6 font-body-sm">For corporate inquiries, medical records and official feedback.</p>
+          <a 
+            class="text-headline-md font-bold text-on-primary-fixed-variant block hover:underline" 
+            href="mailto:asokoro@providence.hospital"
+            aria-label="Email: asokoro@providence.hospital"
+          >
+            info@providencemsh.com
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 🏥 Visit Us Section (Bento Layout) -->
+    <section class="pb-20 md:pb-24 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
+        
+        <!-- Left Column: Hours & Access -->
+        <div class="lg:col-span-4 flex flex-col gap-6 md:gap-8">
+          
+          <!-- Hours Card -->
+          <article class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-outline-variant/30 reveal active">
+            <h3 class="text-headline-md text-primary mb-6 flex items-center gap-2">
+              <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+              Facility Hours
+            </h3>
+            <ul class="space-y-4 text-sm md:text-base">
+              <li class="flex justify-between items-center border-b border-outline-variant/10 pb-2">
+                <span class="font-medium text-on-surface">Emergency Care</span>
+                <span class="text-secondary font-bold">24 Hours</span>
+              </li>
+              <li class="flex justify-between items-center border-b border-outline-variant/10 pb-2">
+                <span class="text-on-surface-variant">General OPD</span>
+                <span class="text-on-surface font-medium">08:00 — 21:00</span>
+              </li>
+              <li class="flex justify-between items-center border-b border-outline-variant/10 pb-2">
+                <span class="text-on-surface-variant">Diagnostics</span>
+                <span class="text-on-surface font-medium">07:00 — 22:00</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <span class="text-on-surface-variant">Pharmacy</span>
+                <span class="text-secondary font-bold">24 Hours</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Access Card -->
+          <article class="bg-surface-container-low p-6 md:p-8 rounded-xl reveal active">
+            <h3 class="text-headline-md text-primary mb-4 flex items-center gap-2">
+              <span class="material-symbols-outlined" aria-hidden="true">local_hospital</span>
+              Patient Access
+            </h3>
+            <p class="text-body-md text-on-surface-variant leading-relaxed">
+              Dedicated secure patient parking is available on-site with valet services. The main entrance is fully wheelchair accessible with concierge assistance available 24/7 at the front desk.
+            </p>
+          </article>
+        </div>
+
+        <!-- Middle Column: Department Lines -->
+        <div class="lg:col-span-5 space-y-6">
+          <article class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-outline-variant/40 h-full flex flex-col reveal active">
+            <h3 class="text-headline-md text-primary mb-4">Direct Department Lines</h3>
+            <p class="text-on-surface-variant mb-6 md:mb-8">Reach our specific desks for faster assistance.</p>
+            
+            <div class="space-y-4 flex-grow">
+              <!-- Appointments -->
+              <a 
+                href="tel:+2349088991154"
+                class="p-4 rounded-lg bg-surface hover:bg-surface-container transition-colors border border-outline-variant/20 flex items-center justify-between group"
+                aria-label="Call Appointments: +234 90 8899 1154"
+              >
+                <div class="flex items-center gap-4">
+                  <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all flex-shrink-0">
+                    <span class="material-symbols-outlined text-xl" aria-hidden="true">call</span>
+                  </div>
+                  <div>
+                    <p class="font-bold text-on-surface">Appointments</p>
+                    <p class="text-body-sm text-on-surface-variant">+234 90 8899 1154</p>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined text-secondary flex-shrink-0" aria-hidden="true">open_in_new</span>
+              </a>
+
+              <!-- Billing -->
+              <a 
+                href="tel:+234909990002"
+                class="p-4 rounded-lg bg-surface hover:bg-surface-container transition-colors border border-outline-variant/20 flex items-center justify-between group"
+                aria-label="Call Billing & Insurance: +234 90 999 0002"
+              >
+                <div class="flex items-center gap-4">
+                  <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all flex-shrink-0">
+                    <span class="material-symbols-outlined text-xl" aria-hidden="true">description</span>
+                  </div>
+                  <div>
+                    <p class="font-bold text-on-surface">Billing & Insurance</p>
+                    <p class="text-body-sm text-on-surface-variant">+234 90 999 0002</p>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined text-secondary flex-shrink-0" aria-hidden="true">open_in_new</span>
+              </a>
+
+              <!-- Patient Experience -->
+              <a 
+                href="tel:+2349088991164"
+                class="p-4 rounded-lg bg-surface hover:bg-surface-container transition-colors border border-outline-variant/20 flex items-center justify-between group"
+                aria-label="Call Patient Experience: +234 90 8899 1164"
+              >
+                <div class="flex items-center gap-4">
+                  <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all flex-shrink-0">
+                    <span class="material-symbols-outlined text-xl" aria-hidden="true">chat_bubble</span>
+                  </div>
+                  <div>
+                    <p class="font-bold text-on-surface">Patient Experience</p>
+                    <p class="text-body-sm text-on-surface-variant">+234 90 8899 1164</p>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined text-secondary flex-shrink-0" aria-hidden="true">open_in_new</span>
+              </a>
+            </div>
+
+            <!-- WhatsApp CTA -->
+            <div class="mt-6 md:mt-8 p-6 bg-primary-container rounded-xl text-white">
+              <p class="font-bold mb-2">Preferred Method?</p>
+              <p class="text-body-sm opacity-80 mb-4">Our WhatsApp desk is manned 24/7 for the quickest response time.</p>
+              <a 
+                class="inline-flex items-center gap-2 bg-secondary text-white px-6 py-2.5 rounded-lg font-label-md hover:scale-105 transition-transform" 
+                href="https://wa.me/2349088991164"
+                aria-label="Start WhatsApp chat"
+              >
+                Start WhatsApp Chat
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Right Column: Facility Images -->
+        <div class="lg:col-span-3 flex flex-col gap-4">
+          <figure class="group relative overflow-hidden rounded-xl flex-1 shadow-sm reveal active">
+            <img 
+              class="w-full h-48 md:h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxaCQq8imcpzwviXCwD400IUPr5-e-wmAeSZiEe15iTxwy-fOAwRVz3a2pL6WRofTGSUS5IAJX8ZBQZWUFb3ZAAmSyAfQUsCvXQj9ETwEZt2qqsfRv6eizF5nn7OEbS9DpyZ4b1plMVeT8GiAz3pFao_vHnD6lANCNpIUaoXitnO_85MPyGoPsH7vhhGOvegt7HeYYyGB0zueNb4SMdB7w5FefEOPL3mQIivtM9y7oMEeETBiUwG6LPC4cKIprAPY1Zq73qvZw_3t_" 
+              alt="Providence Asokoro main entrance with modern glass facade"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+            <figcaption class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+              <p class="text-white font-label-md">Main Entrance</p>
+            </figcaption>
+          </figure>
+          
+          <figure class="group relative overflow-hidden rounded-xl flex-1 shadow-sm reveal active">
+            <img 
+              class="w-full h-48 md:h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQmxVcHt5mMhlOh9QP_pxeNmHlKJYIdgvg5BjyvQniTiVr0vI7UdOcJgWZ_GqKM5GWFpAJIkUFL-8N9PD3y43dPO2XJO7-7VnkUrUZiLsy-hYE_Yg6NIy61fOUraMbZHN2tu4lmdiQ2wDfAwpFm7WesAXaVBDePVIf6aOJ0FkncRnuSbUVeW30GnTRPH57mazmP0-LYX_RLnMi18d-gGI8ReL1Vz-n6OdDFkXebcv3bgEPb4RzhBvx6M8Kw2mdWAAK_kZTIwaJbYNN" 
+              alt="Modern radiology and laboratory equipment at Providence Hospital"
+              loading="lazy"
+              width="400"
+              height="300"
+            />
+            <figcaption class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+              <p class="text-white font-label-md">Radiology & Labs</p>
+            </figcaption>
+          </figure>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 🗺️ Map CTA Section -->
+    <section class="py-20 md:py-24 bg-primary text-on-primary overflow-hidden relative" aria-labelledby="find-us-heading">
+      <!-- Decorative Element -->
+      <div class="absolute top-0 right-0 w-1/2 h-full bg-white/5 -skew-x-12 transform translate-x-1/4" aria-hidden="true"></div>
+      
+      <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop relative z-10 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-12">
+        
+        <!-- Text Content -->
+        <div class="md:w-1/2 reveal active">
+          <h2 id="find-us-heading" class="text-headline-xl mb-6 leading-tight">Need help finding the Hospital?</h2>
+          <p class="text-body-lg text-on-primary/80 mb-8 max-w-lg">
+            We are situated in the Asokoro high-brow area, adjacent to the ECOWAS Secretariat. Look for the distinctive Providence cross emblem on our contemporary glass facade.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a 
+              href="https://maps.google.com/?q=Providence+Multi-Specialty+Hospital+Asokoro"
+              target="_blank"
+              class="bg-secondary text-on-secondary px-6 md:px-8 py-4 rounded-full font-label-md flex items-center gap-2 hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-all shadow-xl w-full md:w-auto justify-center"
+              aria-label="Open Providence Hospital location in Google Maps"
+            >
+              <span class="material-symbols-outlined" aria-hidden="true">map</span>
+              Open in Google Maps
+            </a>
+            <button 
+              class="border border-on-primary/30 text-on-primary px-6 md:px-8 py-4 rounded-full font-label-md hover:bg-white/10 transition-all w-full md:w-auto justify-center"
+              aria-label="Download campus map PDF"
+            >
+              Download Campus Map
+            </button>
+          </div>
+        </div>
+
+        <!-- Other Locations -->
+        <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 reveal active w-full">
+          <article class="p-6 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all">
+            <h3 class="text-headline-md text-secondary-fixed-dim mb-2">Central Clinic</h3>
+            <p class="text-body-sm text-white/70 mb-4">No 16, Mary Slessor Street, off Uzo Udoma Street, Asokoro, FCT Abuja</p>
+            <a href="tel:+23490008881" class="font-bold hover:underline" aria-label="Call Central Clinic">+234 90 8899 1164</a>
+          </article>
+          <article class="p-6 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all">
+            <h3 class="text-headline-md text-secondary-fixed-dim mb-2">Diagnostic Hub</h3>
+            <p class="text-body-sm text-white/70 mb-4">No 16, Mary Slessor Street, off Uzo Udoma Street, Asokoro, FCT Abuja</p>
+            <a href="tel:+2349088991164" class="font-bold hover:underline" aria-label="Call Diagnostic Hub">+234 90 8899 1164</a>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 🦶 Footer -->
+  <footer class="bg-tertiary text-on-tertiary w-full border-t border-white/10" role="contentinfo">
+    <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+        
+        <!-- Brand Info -->
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-3">
+            <img 
+              alt="Providence Logo" 
+              class="h-10 w-10 object-contain brightness-0 invert" 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDflWcI1Z6zU5SEv69rw8rx6X_H3tgubP7YL5yiFUdGRFZLtyxvKEo8cJzj6ala8dy7HcUMxZZpEUDv1vVrU71Nw78Ji4KMb6nzGhzmhwU_4XHF_rk4LWO4rszDFbU0JaeJfseNh7Di4D5iQvjqqJsZIJuz2XLnBt2sO1Yi-oZDLtnyr4vtLEgIfp9sm07-A_N5CRa0EQMj_c5geFHznDQ48asZoTe1pHD7IhAwida7crw_tjCjCmirQVBBc59rIv4nNKcbH8m-hgXL"
+              loading="lazy"
+              width="40"
+              height="40"
+            />
+            <span class="font-headline-md text-headline-md font-bold">Providence Hospital</span>
+          </div>
+          <p class="font-body-sm text-on-tertiary-container max-w-xs">
+            Leading multi-specialty healthcare in Asokoro, Abuja. Providing advanced medical solutions with compassion and excellence.
+          </p>
+          <p class="font-label-md text-label-md text-on-tertiary-container mt-4">
+            © 2024 Providence Multi-Specialty Hospital. All rights reserved.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex flex-col items-start md:items-center">
+          <div class="flex flex-col gap-4">
+            <!-- FIXED: Changed font-label-lg to font-label-md -->
+            <h3 class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed">Quick Links</h3>
+            <nav class="flex flex-col gap-2" aria-label="Footer navigation">
+              <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/home/index.html">Home</a>
+              <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/about/about.html">About Us</a>
+              <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/services/services.html">Services</a>
+              <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/contact/contact.html">Contact</a>
+              <!-- <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/patient-portal/patient-portal.html">Patient Portal</a> -->
+            </nav>
+          </div>
+        </div>
+
+        <!-- Social & Contact -->
+        <div class="flex flex-col gap-6">
+          <div>
+            <!-- FIXED: Changed font-label-lg to font-label-md -->
+            <h3 class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed mb-4">Contact Us</h3>
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center gap-2 text-on-tertiary-container">
+                <span class="material-symbols-outlined text-sm" aria-hidden="true">location_on</span>
+                <span class="font-body-sm">Asokoro District, Abuja, Nigeria</span>
+              </div>
+              <div class="flex items-center gap-2 text-on-tertiary-container">
+                <span class="material-symbols-outlined text-sm" aria-hidden="true">call</span>
+                <a href="tel:+2349088991164" class="font-body-sm hover:underline">+234 90 8899 1164</a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <!-- FIXED: Changed font-label-lg to font-label-md -->
+            <h3 class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed mb-4">Follow Us</h3>
+            <div class="flex gap-4">
+              <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="Facebook">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" class="w-5 h-5 invert" alt="" aria-hidden="true" />
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="Instagram">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" class="w-5 h-5 invert" alt="" aria-hidden="true" />
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="TikTok">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" class="w-5 h-5 invert" alt="" aria-hidden="true" />
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="X (Twitter)">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg" class="w-5 h-5 invert" alt="" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- 💬 WhatsApp Floating Button -->
+  <a 
+    class="fixed bottom-8 right-8 h-16 w-16 bg-secondary text-on-secondary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-all z-40" 
+    href="https://wa.me/#2349088991164"
+    aria-label="Chat on WhatsApp"
+  >
+    <span class="material-symbols-outlined text-[32px]">chat_bubble</span>
+  </a>
+
+  <!-- 🧠 JavaScript -->
+  <script>
+    // ===== 1. Scroll Reveal Animation =====
+    function initScrollReveal() {
+      const reveals = document.querySelectorAll('.reveal');
+      
+      const onScroll = () => {
+        for (let i = 0; i < reveals.length; i++) {
+          const windowHeight = window.innerHeight;
+          const elementTop = reveals[i].getBoundingClientRect().top;
+          const elementVisible = 150;
+          
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add('active');
+          }
+        }
+      };
+      
+      // Initial check + scroll listener
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    // ===== 2. Mobile Menu Toggle =====
+    function initMobileMenu() {
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('close-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      const overlay = document.getElementById('menu-overlay');
+      
+      if (!menuBtn || !menu) return;
+      
+      function toggleMenu() {
+        const isOpen = !menu.classList.contains('translate-x-full');
+        menu.classList.toggle('translate-x-full');
+        overlay?.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', isOpen);
+        document.body.classList.toggle('overflow-hidden');
+      }
+      
+      menuBtn.addEventListener('click', toggleMenu);
+      closeBtn?.addEventListener('click', toggleMenu);
+      overlay?.addEventListener('click', toggleMenu);
+      
+      // Close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !menu.classList.contains('translate-x-full')) {
+          toggleMenu();
+        }
+      });
+    }
+
+    // ===== 3. Smooth Scroll for Anchor Links =====
+    function initSmoothScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    }
+
+    // ===== Initialize on DOM Ready =====
+    document.addEventListener('DOMContentLoaded', () => {
+      initScrollReveal();
+      initMobileMenu();
+      initSmoothScroll();
+    });
+  </script>
+
+</body>
+</html>
