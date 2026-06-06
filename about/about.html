@@ -184,7 +184,7 @@
         <img 
           src="/images/Providence logo.png" 
           alt="Providence Hospital Logo" 
-          class="h-16 md:h-24 w-auto object-contain"
+          class="h-20 md:h-40 w-auto object-contain"
           loading="eager"
         />
       </a>
@@ -300,7 +300,7 @@
         <div class="relative reveal active order-1 md:order-2 flex justify-center">
           <div class="w-full aspect-square max-w-[300px] md:max-w-md bg-white p-6 md:p-12 rounded-[2rem] shadow-xl relative overflow-hidden">
             <img 
-              src="/images/Executives.png" 
+              src="/images/Executives (1).png" 
               alt="Providence Hospital Leadership Team smiling in modern facility" 
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               loading="eager"
@@ -318,108 +318,114 @@
 
     <!-- ❤️ Our Story / Mission / Vision / Values -->
     <section class="py-12 md:py-16 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" aria-labelledby="heart-heritage-heading">
-      <div class="max-w-[1280px] mx-auto">
-        
-        <!-- Section Header -->
-        <div class="max-w-3xl mx-auto text-center mb-12 md:mb-16 reveal active">
-          <h2 id="heart-heritage-heading" class="font-headline-lg text-headline-lg text-primary mb-2 md:mb-stack-sm">Our Heart & Heritage</h2>
-          <p class="font-body-md text-body-md text-on-surface-variant">
-            Dedicated to providing world-class healthcare with a local heart, serving the Abuja community for over a decade with unwavering commitment.
-          </p>
-        </div>
+  <div class="max-w-[1280px] mx-auto">
+    
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center mb-12 md:mb-16 reveal active">
+      <h2 id="heart-heritage-heading" class="font-headline-lg text-headline-lg text-primary mb-2 md:mb-stack-sm">Our Heart & Heritage</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant">
+        Dedicated to providing world-class healthcare with a local heart, serving the Abuja community for over a decade with unwavering commitment.
+      </p>
+    </div>
 
-        <!-- Bento Grid Layout -->
-        <div class="grid md:grid-cols-12 gap-6 md:gap-gutter auto-rows-[minmax(200px,auto)] md:auto-rows-[280px]">
+    <!-- Bento Grid Layout -->
+    <!-- FIX 1: Changed md:auto-rows-[280px] to md:auto-rows-[minmax(280px, auto)] -->
+    <!-- This allows the Mission/Vision rows to stay tall (280px) but allows the Core Values row to grow as needed. -->
+    <div class="grid md:grid-cols-12 gap-6 md:gap-gutter auto-rows-[minmax(200px,auto)] md:auto-rows-[minmax(280px, auto)]">
+      
+      <!-- Mission Card -->
+      <article class="md:col-span-8 bg-primary-container rounded-xl p-6 md:p-stack-lg text-white flex flex-col justify-end relative overflow-hidden reveal group hover:shadow-2xl transition-all duration-500 active">
+        <div class="absolute top-4 md:top-8 right-4 md:right-8 opacity-20 transition-transform group-hover:scale-110 duration-500" aria-hidden="true">
+          <span class="material-symbols-outlined !text-5xl md:!text-7xl">rocket_launch</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md mb-2 md:mb-stack-sm text-on-primary-container">Mission</h3>
+        <p class="font-body-md text-body-md opacity-90 max-w-md">
+          To provide high quality and readily accessible patient centered healthcare in an atmosphere of love, trust, safety and comfort; that is effecient, value priced and meets the needs of individual, family and community through innovation and pursuit of excellence.
+        </p>
+      </article>
+
+      <!-- Vision Card -->
+      <article class="md:col-span-4 bg-secondary-container rounded-xl p-6 md:p-stack-lg flex flex-col justify-end relative overflow-hidden reveal group hover:shadow-2xl transition-all duration-500 active">
+        <div class="absolute top-4 md:top-8 right-4 md:right-8 opacity-20 transition-transform group-hover:rotate-12 duration-500" aria-hidden="true">
+          <span class="material-symbols-outlined !text-5xl md:!text-7xl">visibility</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md mb-2 md:mb-stack-sm text-on-secondary-container">Vision</h3>
+        <p class="font-body-md text-body-md opacity-90">
+          To be the leadiing healthcare institution of choice for patients, physicians and employees in the region, providing world class service.
+        </p>
+      </article>
+
+      <!-- Core Values Card -->
+      <!-- FIX 2: Removed 'h-full' and 'mt-*' classes. Removed 'overflow-hidden' if present. -->
+      <!-- The card will now expand naturally to fit the content. -->
+      <article class="md:col-span-12 bg-surface p-6 md:p-16 rounded-xl border border-outline-variant reveal active">
+        <h3 class="font-headline-md text-headline-md text-primary mb-6 md:mb-10 text-center">Our Core Values</h3>
+        
+        <div class="grid md:grid-cols-3 gap-6 md:gap-8">
           
-          <!-- Mission Card -->
-          <article class="md:col-span-8 bg-primary-container rounded-xl p-6 md:p-stack-lg text-white flex flex-col justify-end relative overflow-hidden reveal group hover:shadow-2xl transition-all duration-500 active">
-            <div class="absolute top-4 md:top-8 right-4 md:right-8 opacity-20 transition-transform group-hover:scale-110 duration-500" aria-hidden="true">
-              <span class="material-symbols-outlined !text-5xl md:!text-7xl">rocket_launch</span>
+          <!-- Integrity -->
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary text-[24px]" aria-hidden="true">verified_user</span>
             </div>
-            <h3 class="font-headline-md text-headline-md mb-2 md:mb-stack-sm text-on-primary-container">Mission</h3>
-            <p class="font-body-md text-body-md opacity-90 max-w-md">
-              To provide high quality and readily accessible patient centered healthcare in an atmosphere of love, trust, safety and comfort; that is effecient, value priced and meets the needs of individual, family and community through innovation and pursuit of excellence.
-            </p>
-          </article>
-
-          <!-- Vision Card -->
-          <article class="md:col-span-4 bg-secondary-container rounded-xl p-6 md:p-stack-lg flex flex-col justify-end relative overflow-hidden reveal group hover:shadow-2xl transition-all duration-500 active">
-            <div class="absolute top-4 md:top-8 right-4 md:right-8 opacity-20 transition-transform group-hover:rotate-12 duration-500" aria-hidden="true">
-              <span class="material-symbols-outlined !text-5xl md:!text-7xl">visibility</span>
+            <!-- FIX 3: Added 'min-w-0' to allow text to wrap in flexbox -->
+            <div class="min-w-0">
+              <h4 class="font-label-md text-label-md text-primary mb-2">Integrity</h4>
+              <!-- FIX 4: Added 'break-words' to force long words to wrap -->
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed break-words">
+                We will maintain to be honest, fair and apply ethical standards in everything we do, meaning we do the right thing even when no one is looking, as the ideal means to protect overall trust and safety, as well as assure confidentiality and privacy.
+              </p>
             </div>
-            <h3 class="font-headline-md text-headline-md mb-2 md:mb-stack-sm text-on-secondary-container">Vision</h3>
-            <p class="font-body-md text-body-md opacity-90">
-              To be the leadiing healthcare institution of choice for patients, physicians and employees in the region, providing world class service.
-            </p>
-          </article>
+          </div>
 
-          <!-- Core Values Card -->
-          <article class="md:col-span-12 bg-surface p-6 md:p-stack-lg rounded-xl border border-outline-variant reveal active">
-            <h3 class="font-headline-md text-headline-md text-primary mb-6 md:mb-8 text-center">Our Core Values</h3>
-            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
-              
-              <!-- Integrity -->
-              <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                  <span class="material-symbols-outlined text-primary" aria-hidden="true">verified_user</span>
-                </div>
-                <div>
-                  <h4 class="font-label-md text-label-md text-primary mb-1">Integrity</h4>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">
-                    We uphold the highest ethical standards in all clinical and administrative decisions.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Excellence -->
-              <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                  <span class="material-symbols-outlined text-primary" aria-hidden="true">star</span>
-                </div>
-                <div>
-                  <h4 class="font-label-md text-label-md text-primary mb-1">Excellence</h4>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">
-                    Pursuing perfection in patient outcomes through continuous learning and modern technology.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Patient-First -->
-              <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                  <span class="material-symbols-outlined text-primary" aria-hidden="true">volunteer_activism</span>
-                </div>
-                <div>
-                  <h4 class="font-label-md text-label-md text-primary mb-1">Patient-First</h4>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">
-                    Every action we take is centered around the comfort and recovery of those we serve.
-                  </p>
-                </div>
-              </div>
-
+          <!-- Service -->
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary text-[24px]" aria-hidden="true">concierge</span>
             </div>
-          </article>
+            <div class="min-w-0">
+              <h4 class="font-label-md text-label-md text-primary mb-2">Service</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed break-words">
+                We will inspire our staff to achieve the extraordinary and facilitate all opportunities for personal and professional growth via training and development.
+              </p>
+            </div>
+          </div>
+
+          <!-- Patient-First -->
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary text-[24px]" aria-hidden="true">volunteer_activism</span>
+            </div>
+            <div class="min-w-0">
+              <h4 class="font-label-md text-label-md text-primary mb-2">Patient-First</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed break-words">
+                We will provide and deliver superior performance and quality in all we do to exceed expectations, in the creation of healthier lives in the community.
+              </p>
+            </div>
+          </div>
 
         </div>
-      </div>
-    </section>
+      </article>
 
-    <!-- 👥 Leadership Section -->
-    <section class="py-12 md:py-16 px-margin-mobile md:px-margin-desktop bg-surface-container-low" aria-labelledby="leadership-heading">
+    </div>
+  </div>
+</section>
+  <!-- Leadership Section -->
+    <!-- <section class="py-12 md:py-16 px-margin-mobile md:px-margin-desktop bg-surface-container-low" aria-labelledby="leadership-heading">
       <div class="max-w-[1280px] mx-auto">
         
-        <!-- Section Header -->
+        
         <div class="text-center mb-10 md:mb-12 reveal active">
           <h2 id="leadership-heading" class="font-headline-lg text-headline-lg text-primary">Our Leadership</h2>
           <p class="text-on-surface-variant mt-2">The visionaries behind our clinical excellence</p>
         </div>
 
-        <!-- Leaders Grid -->
+        
         <div class="grid md:grid-cols-2 gap-6 md:gap-gutter max-w-5xl mx-auto">
           
-          <!-- Leader Card 1: Dr. John Asekhame -->
-          <article class="bg-surface-container-lowest p-6 md:p-8 rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-all reveal active">
-            <div class="flex flex-col md:flex-row gap-6 items-center text-center md:text-left">
+          Leader Card 1: Dr. John Asekhame
+          <article class="bg-surface-container-lowest p-6 md:p-8 rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-all reveal active"> -->
+            <!-- <div class="flex flex-col md:flex-row gap-6 items-center text-center md:text-left">
               <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden shrink-0 border-4 border-primary/10">
                 <img 
                   class="w-full h-full object-cover" 
@@ -440,8 +446,8 @@
             </div>
           </article>
 
-          <!-- Leader Card 2: Matron Deborah Bello -->
-          <article class="bg-surface-container-lowest p-6 md:p-8 rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-all reveal active">
+           Leader Card 2: Matron Deborah Bello -->
+          <!-- <article class="bg-surface-container-lowest p-6 md:p-8 rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-all reveal active">
             <div class="flex flex-col md:flex-row gap-6 items-center text-center md:text-left">
               <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden shrink-0 border-4 border-primary/10">
                 <img 
@@ -465,7 +471,73 @@
 
         </div>
       </div>
+    </section> -->
+  <!-- Leadership section-->
+        <!-- 🏆 Excellence & Accreditation Section -->
+    <section class="pb-12  px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" aria-labelledby="excellence-heading">
+      <div class="max-w-[1280px] mx-auto">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16 reveal active">
+          <h2 id="excellence-heading" class="font-headline-lg text-headline-lg text-primary mb-4">
+            Excellence & Accreditation
+          </h2>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            Providence Hospital is dedicated to maintaining international standards of clinical excellence. Our commitment to high-quality patient outcomes is reflected in our rigorous adherence to global healthcare protocols and continuous investment in medical innovation.
+          </p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          
+          <!-- Card 1: Certified Excellence -->
+          <article class="bg-white p-6 md:p-8 rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-all reveal active">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+              <span class="material-symbols-outlined text-primary text-[24px]" aria-hidden="true">settings</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-primary mb-3">Certified Excellence</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">
+              Strict adherence to international clinical protocols ensuring the highest safety standards.
+            </p>
+          </article>
+
+          <!-- Card 2: Modern Facility -->
+          <article class="bg-white p-6 md:p-8 rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-all reveal active">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+              <span class="material-symbols-outlined text-primary text-[24px]" aria-hidden="true">apartment</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-primary mb-3">Modern Facility</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">
+              State-of-the-art infrastructure in Asokoro designed for optimal healing and efficiency.
+            </p>
+          </article>
+
+          <!-- Card 3: Patient-Centric Care -->
+          <article class="bg-white p-6 md:p-8 rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-all reveal active">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+              <span class="material-symbols-outlined text-primary text-[24px]" aria-hidden="true">favorite</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-primary mb-3">Patient-Centric Care</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">
+              A personalized approach to health that puts your comfort and recovery at the center.
+            </p>
+          </article>
+
+          <!-- Card 4: Accredited Lab Services -->
+          <article class="bg-white p-6 md:p-8 rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-all reveal active">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+              <span class="material-symbols-outlined text-primary text-[24px]" aria-hidden="true">biotech</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-primary mb-3">Accredited Lab Services</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">
+              High-precision diagnostic standards powered by semi-automated laboratory technology.
+            </p>
+          </article>
+
+        </div>
+      </div>
     </section>
+
 
     <!-- 🏥 Infrastructure Section -->
     <section class="py-12 md:py-16 px-margin-mobile md:px-margin-desktop bg-surface" aria-labelledby="infrastructure-heading">
@@ -476,7 +548,7 @@
           <div class="grid grid-cols-2 gap-4">
             <img 
               class="w-full h-48 md:h-64 object-cover rounded-xl shadow-lg" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsFgfYJN77BOlMKYLuhszsRBVAw8Dja7iunBY8PTPg3eLZOpsmZqM5GN4z90esvacv7Fd71bulAmZSrJk0H097PM13i8IY1-LUg5lholaSM1MJcjmxrEHUDMbvN4Na-pZbNSTrmhaLt1MwR5hg61TQ2S8-GrGxkN587pOGx_P3u5EMv_mjjtuMd57WSJopvPUPEOqbsrhvwMbvuJHDKQWrFPrXKzhPCKDQqilwewm3IrJfolys8ZGWPFdNqsYXqCcEQCEyLf8ayLOL" 
+              src="/images/Theater.jpeg" 
               alt="State-of-the-art medical diagnostic equipment in clean laboratory"
               loading="lazy"
               width="300"
@@ -484,8 +556,7 @@
             />
             <img 
               class="w-full h-48 md:h-64 object-cover rounded-xl shadow-lg translate-y-0 md:translate-y-8" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0K8xGs2CsmWsoNn6em_T6gqsIhwuScfaNIMzfUV2I4SqpAOFI8egVZhgqMnJ9QuAx2zA0Mm8WaEYfscyqTDIJK0u6Xdccov1Njxb6ERpLm2EIiJE-dv0c1XJuPvywEOruH4q5jB1y-y0JQz7vbwW_BQVOs-ql_X-sgDzia0aBRwA_H2SYKiyFXMyf-HlkxzShW9vxkW7vL5ilylEcAxN_nNETH0nuDjgl4u7Bm7YFOGTgBUCanVhMtLSqZDTqaGTZPfufGwB2vdgD" 
-              alt="Spacious contemporary hospital lobby with natural sunlight and minimalist design"
+              src="/images/Ultrasound.jpeg"
               loading="lazy"
               width="300"
               height="256"
@@ -505,7 +576,7 @@
           <ul class="space-y-4">
             <li class="flex items-center gap-3">
               <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">check_circle</span>
-              <span class="font-body-md text-on-surface">Precision MRI & CT Scanning Suites</span>
+              <span class="font-body-md text-on-surface">Precision Ultrasound and ECG Scanning Suites</span>
             </li>
             <li class="flex items-center gap-3">
               <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">check_circle</span>
@@ -535,7 +606,7 @@
         <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6">
           <a 
             class="bg-white text-primary px-8 md:px-10 py-4 rounded-full font-label-md hover:bg-secondary-fixed transition-all flex items-center gap-2 group active:scale-95 shadow-xl w-full md:w-auto justify-center" 
-            href="#"
+            href="https://wa.me/2349088991164"
             aria-label="Speak to someone on WhatsApp"
           >
             <span class="material-symbols-outlined" aria-hidden="true">forum</span>
@@ -543,7 +614,7 @@
           </a>
           <a 
             class="border-2 border-white/20 text-white px-8 md:px-10 py-4 rounded-full font-label-md hover:bg-white/10 transition-all active:scale-95 w-full md:w-auto justify-center" 
-            href="#"
+            href="https://forms.gle/JFUKTj8Acn2P6LkK9"
             aria-label="Book an appointment"
           >
             Book Appointment
@@ -554,7 +625,7 @@
 
   </main>
 
-  <!-- 🦶 Footer (Fixed heading sizes) -->
+   <!-- 🦶 Footer -->
   <footer class="bg-tertiary text-on-tertiary w-full border-t border-white/10" role="contentinfo">
     <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
@@ -570,25 +641,27 @@
               width="40"
               height="40"
             />
-            <span class="font-headline-md text-headline-md font-bold">Providence Hospital</span>
+            <span class="font-headline-md text-headline-md font-bold">Providence MSH</span>
           </div>
           <p class="font-body-sm text-on-tertiary-container max-w-xs">
             Leading multi-specialty healthcare in Asokoro, Abuja. Providing advanced medical solutions with compassion and excellence.
           </p>
           <p class="font-label-md text-label-md text-on-tertiary-container mt-4">
-            © 2024 Providence Multi-Specialty Hospital. All rights reserved.
+          © <span id="copyright-year"></span> Providence Multi-Specialty Hospital. All rights reserved.
           </p>
         </div>
 
         <!-- Quick Links -->
         <div class="flex flex-col items-start md:items-center">
           <div class="flex flex-col gap-4">
+            <!-- FIXED: Changed font-label-lg to font-label-md -->
             <h3 class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed">Quick Links</h3>
             <nav class="flex flex-col gap-2" aria-label="Footer navigation">
               <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/index.html">Home</a>
               <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/about/about.html">About Us</a>
               <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/services/services.html">Services</a>
               <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/contact/contact.html">Contact</a>
+              <!-- <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/patient-portal/patient-portal.html">Patient Portal</a> -->
             </nav>
           </div>
         </div>
@@ -596,6 +669,7 @@
         <!-- Social & Contact -->
         <div class="flex flex-col gap-6">
           <div>
+            <!-- FIXED: Changed font-label-lg to font-label-md -->
             <h3 class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed mb-4">Contact Us</h3>
             <div class="flex flex-col gap-2">
               <div class="flex items-center gap-2 text-on-tertiary-container">
@@ -604,20 +678,21 @@
               </div>
               <div class="flex items-center gap-2 text-on-tertiary-container">
                 <span class="material-symbols-outlined text-sm" aria-hidden="true">call</span>
-                <a href="tel:+2340000000000" class="font-body-sm hover:underline">+234 000 000 0000</a>
+                <a href="tel:+2349088991164" class="font-body-sm hover:underline">+234 90 8899 1164</a>
               </div>
             </div>
           </div>
           <div>
+            <!-- FIXED: Changed font-label-lg to font-label-md -->
             <h3 class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed mb-4">Follow Us</h3>
             <div class="flex gap-4">
-              <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="Facebook">
+              <a href="https://web.facebook.com/providencemsh" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="Facebook">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" class="w-5 h-5 invert" alt="" aria-hidden="true" />
               </a>
-              <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="Instagram">
+              <a href="https://www.instagram.com/providencemsh/" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="Instagram">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" class="w-5 h-5 invert" alt="" aria-hidden="true" />
               </a>
-              <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="TikTok">
+              <a href="https://www.tiktok.com/@providence_msh?_r=1&_d=f240a3dbb007l5&sec_uid=MS4wLjABAAAAn1i_szpqEHWAGejM6VoziD3ZRE5ZP1THoXuM7jzHqaNt-k0dbj-o6MyzNmb48kLZ&share_author_id=7553947387610416148&sharer_language=en&source=h5_m&u_code=emg1ghejmmlc06&item_author_type=1&utm_source=copy&tt_from=copy&enable_checksum=1&utm_medium=ios&share_link_id=71B0118B-279C-4A30-92CB-F134C1CBC52E&user_id=7553947387610416148&sec_user_id=MS4wLjABAAAAn1i_szpqEHWAGejM6VoziD3ZRE5ZP1THoXuM7jzHqaNt-k0dbj-o6MyzNmb48kLZ&social_share_type=4&ug_btm=b8727,b0&utm_campaign=client_share&share_app_id=1233" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="TikTok">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" class="w-5 h-5 invert" alt="" aria-hidden="true" />
               </a>
               <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="X (Twitter)">
@@ -703,7 +778,15 @@
       initMobileMenu();
       initLogoAnimation();
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const yearSpan = document.getElementById('copyright-year');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
   </script>
+  
 
 </body>
 </html>

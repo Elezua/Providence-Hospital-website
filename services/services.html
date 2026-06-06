@@ -47,6 +47,39 @@
     .hidden-card {
       display: none;
     }
+
+    /* HMO Logo Slider Styles */
+    .logo-slider {
+      display: flex;
+      animation: scroll-left 30s linear infinite;
+      width: max-content;
+    }
+    .logo-slider:hover {
+      animation-play-state: paused;
+    }
+    .logo-item {
+      flex: 0 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* filter: grayscale(100%) brightness(0.6); */
+      transition: filter 0.3s ease;
+      opacity: 0.7;
+    }
+    .logo-item:hover {
+      filter: grayscale(0%) brightness(1);
+      opacity: 1;
+    }
+    .logo-item img {
+      max-height: 40px;
+      max-width: 120px;
+      object-fit: contain;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
   </style>
 
   <!-- 🎨 Tailwind Configuration (Standardized) -->
@@ -176,7 +209,7 @@
         <img 
           src="/images/Providence logo.png" 
           alt="Providence Hospital Logo" 
-          class="h-16 md:h-24 w-auto object-contain"
+          class="h-20 md:h-40 w-auto object-contain"
         />
       </div>
 
@@ -282,8 +315,7 @@
         <!-- Hero Image -->
         <div class="relative h-[400px] rounded-xl overflow-hidden shadow-2xl">
           <img 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3KQH-Ve6rbuJVcvbh6S_bY033UpSkhMspHAAfvNHducYVMnvVsE9EWw72bQA1aziMEzYlppcWDtJpsUZMXajfFcMBB18T-JGxG5k0Oct5IRVWcLWKmOyhCPVrPRk7vkL0esZRJrF1Eh_YBoTe5MbEn7mMLHlYb6EDBM-OnkqE4-fVV-Xc_aijo8t5S0jvVJzzfDo9bU3KPubaP3equ1XTeN4BOvdnFp67M0ZEoL_xWBpsVWEiy9AisX5FCUfQmIa0LsCShr8DraDA" 
-            alt="Modern hospital interior with bright reception area and natural lighting" 
+            src="/images/reception.jpeg" 
             class="w-full h-full object-cover"
             loading="eager"
           />
@@ -404,7 +436,7 @@
         </article>
 
         <!-- 7. Ophthalmology (Clinical) -->
-        <article class="service-card group relative overflow-hidden rounded-xl bg-white border border-outline-variant/30 p-6 transition-all hover:shadow-xl flex flex-col items-center text-center break-inside-avoid" data-category="clinical">
+        <!-- <article class="service-card group relative overflow-hidden rounded-xl bg-white border border-outline-variant/30 p-6 transition-all hover:shadow-xl flex flex-col items-center text-center break-inside-avoid" data-category="clinical">
           <div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
             <span class="material-symbols-outlined text-4xl text-secondary">visibility</span>
           </div>
@@ -412,7 +444,7 @@
           <p class="text-on-surface-variant font-body-sm">
             Eye exams, cataract surgery, and glaucoma treatment.
           </p>
-        </article>
+        </article> -->
 
         <!-- 8. ENT (Clinical) -->
         <article class="service-card group relative overflow-hidden rounded-xl bg-white border border-outline-variant/30 p-6 transition-all hover:shadow-xl flex flex-col items-center text-center break-inside-avoid" data-category="clinical">
@@ -451,13 +483,13 @@
         </article>
 
         <!-- 11. Plastic Surgery (Surgical) -->
-        <article class="service-card group relative overflow-hidden rounded-xl bg-surface border border-outline-variant/30 p-8 transition-all hover:shadow-xl break-inside-avoid" data-category="surgical">
+        <!-- <article class="service-card group relative overflow-hidden rounded-xl bg-surface border border-outline-variant/30 p-8 transition-all hover:shadow-xl break-inside-avoid" data-category="surgical">
           <span class="material-symbols-outlined text-5xl text-secondary mb-8" style="font-variation-settings: 'FILL' 1;">face</span>
           <h3 class="font-headline-md text-headline-md text-primary mb-4">Plastic Surgery</h3>
           <p class="text-on-surface-variant font-body-md">
             Reconstructive and cosmetic procedures performed by certified specialists for optimal aesthetic outcomes.
           </p>
-        </article>
+        </article> -->
 
         <!-- 12. Urology (Surgical/Clinical) -->
         <article class="service-card group relative overflow-hidden rounded-xl bg-surface border border-outline-variant/30 p-8 transition-all hover:shadow-xl break-inside-avoid" data-category="surgical clinical">
@@ -469,7 +501,7 @@
         </article>
 
         <!-- 13. Bone Deformity Correction (Surgical) -->
-        <article class="service-card group relative overflow-hidden rounded-xl bg-primary-container p-8 transition-all hover:shadow-xl text-white break-inside-avoid" data-category="surgical">
+        <!-- <article class="service-card group relative overflow-hidden rounded-xl bg-primary-container p-8 transition-all hover:shadow-xl text-white break-inside-avoid" data-category="surgical">
           <div class="flex flex-col md:flex-row gap-6 items-start">
             <span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">orthopedics</span>
             <div>
@@ -671,24 +703,77 @@
           </div>
 
         </div>
+        <!-- 🏥 HMO Partners Logo Slider (NEW SECTION) -->
+      <section class="py-12 mt-16 md:py-16 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest reveal active">
+          <div class="max-w-[1280px] mx-auto">
+            <div class="text-center mb-8 md:mb-12">
+              <h3 class="font-headline-md text-headline-md text-primary mb-2">Trusted by Leading HMOs</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                We accept all major health insurance plans and work with Nigeria's top HMO providers for seamless billing.
+              </p>
+            </div>
+            
+            <!-- Logo Slider Container -->
+            <div class="relative overflow-hidden">
+              <!-- Gradient fade edges -->
+              <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-surface-container-lowest to-transparent z-10"></div>
+              <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-surface-container-lowest to-transparent z-10"></div>
+              
+              <!-- Slider Track -->
+              <div class="logo-slider">
+                <!-- Logos (duplicated for seamless loop) -->
+                <!-- Set 1 -->
+                <div class="logo-item"><img src="/images/Hygia.png" alt="Hygeia HMO" /></div>
+                <div class="logo-item"><img src="/images/RelianceHMO.png" alt="Reliance HMO" /></div>
+                <div class="logo-item"><img src="/images/AXA MansardHMO.png" alt="AXA Mansard" /></div>
+                <div class="logo-item"><img src="/images/NEM Insurance.png" alt="NEM Insurance" /></div>
+                <div class="logo-item"><img src="/images/BUPAHMO.png" alt="BUPA" /></div>
+                <div class="logo-item"><img src="/images/CIGNA.png" alt="CIGNA" /></div>
+                <div class="logo-item"><img src="/images/Avon HMO.png" alt="Avon HMO" /></div>
+                <div class="logo-item"><img src="/images/Redcare HMO.png" alt="Redcare HMO" /></div>
+                
+                <!-- Set 2 (Duplicate for seamless infinite scroll) -->
+                <div class="logo-item"><img src="/images/Hygia.png" alt="Hygeia HMO" /></div>
+                <div class="logo-item"><img src="/images/RelianceHMO.png" alt="Reliance HMO" /></div>
+                <div class="logo-item"><img src="/images/AXA MansardHMO.png" alt="AXA Mansard" /></div>
+                <div class="logo-item"><img src="/images/NEM Insurance.png" alt="NEM Insurance" /></div>
+                <div class="logo-item"><img src="/images/BUPAHMO.png" alt="BUPA" /></div>
+                <div class="logo-item"><img src="/images/CIGNA.png" alt="CIGNA" /></div>
+                <div class="logo-item"><img src="/images/Avon HMO.png" alt="Avon HMO" /></div>
+                <div class="logo-item"><img src="/images/Redcare HMO.png" alt="Redcare HMO" /></div>
+              </div>
+            </div>
+            
+            <!-- Optional CTA below slider -->
+            <div class="text-center mt-8">
+              <a 
+                href="mailto:hmo@providencemsh.com?subject=Insurance%20Inquiry" 
+                class="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+              >
+                Not seeing your HMO? Contact us <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </section>
+        
       </div>
 
       <!-- Insurance Sidebar (Right Column - Sticky) -->
       <div class="lg:col-span-4 bg-surface-container border border-outline-variant/30 rounded-xl p-8 sticky top-24 shadow-sm mt-20">
         <h3 class="font-headline-md text-headline-md text-primary mb-6">Insurance & Billing</h3>
         <p class="text-body-md text-on-surface-variant mb-8">
-          We partner with major Private and government providers for seamless billing.
+          We partner with major national and international providers for seamless billing.
         </p>
         
         <div class="space-y-6">
           <!-- International Partners -->
           <div>
-            <span class="text-label-md font-label-md text-primary uppercase tracking-wider mb-4 block">Government Partners</span>
+            <span class="text-label-md font-label-md text-primary uppercase tracking-wider mb-4 block">International Partners</span>
             <div class="grid grid-cols-2 gap-4">
               <div class="bg-white p-3 rounded-lg flex items-center justify-center shadow-sm border border-outline-variant/10 font-bold text-primary italic">BUPA</div>
               <div class="bg-white p-3 rounded-lg flex items-center justify-center shadow-sm border border-outline-variant/10 font-bold text-primary italic">CIGNA</div>
-              <div class="bg-white p-3 rounded-lg flex items-center justify-center shadow-sm border border-outline-variant/10 font-bold text-primary italic">ALLIANZ</div>
-              <div class="bg-white p-3 rounded-lg flex items-center justify-center shadow-sm border border-outline-variant/10 font-bold text-primary italic">AETNA</div>
+              <!-- <div class="bg-white p-3 rounded-lg flex items-center justify-center shadow-sm border border-outline-variant/10 font-bold text-primary italic">ALLIANZ</div>
+              <div class="bg-white p-3 rounded-lg flex items-center justify-center shadow-sm border border-outline-variant/10 font-bold text-primary italic">AETNA</div> -->
             </div>
           </div>
 
@@ -698,7 +783,7 @@
             <ul class="space-y-3">
               <li class="flex items-center gap-3 text-on-surface-variant font-body-sm">
                 <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-                NHIS Accredited
+                Hygeia HMO
               </li>
               <li class="flex items-center gap-3 text-on-surface-variant font-body-sm">
                 <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
@@ -707,6 +792,10 @@
               <li class="flex items-center gap-3 text-on-surface-variant font-body-sm">
                 <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
                 AXA Mansard
+              </li>
+              <li class="flex items-center gap-3 text-on-surface-variant font-body-sm">
+                <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                NEM Insurance
               </li>
             </ul>
           </div>
@@ -725,9 +814,10 @@
       </div>
 
     </section>
+
   </main>
 
-  <!-- 🦶 Footer -->
+   <!-- 🦶 Footer -->
   <footer class="bg-tertiary text-on-tertiary w-full border-t border-white/10" role="contentinfo">
     <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
@@ -743,14 +833,14 @@
               width="40"
               height="40"
             />
-            <span class="font-headline-md text-headline-md font-bold">Providence Hospital</span>
+            <span class="font-headline-md text-headline-md font-bold">Providence MSH</span>
           </div>
           <p class="font-body-sm text-on-tertiary-container max-w-xs">
             Leading multi-specialty healthcare in Asokoro, Abuja. Providing advanced medical solutions with compassion and excellence.
           </p>
           <p class="font-label-md text-label-md text-on-tertiary-container mt-4">
-            © 2024 Providence Multi-Specialty Hospital. All rights reserved.
-          </p>
+          © <span id="copyright-year"></span> Providence Multi-Specialty Hospital. All rights reserved.
+        </p>
         </div>
 
         <!-- Quick Links -->
@@ -788,13 +878,13 @@
             <!-- FIXED: Changed font-label-lg to font-label-md -->
             <h3 class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed mb-4">Follow Us</h3>
             <div class="flex gap-4">
-              <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="Facebook">
+              <a href="https://web.facebook.com/providencemsh" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="Facebook">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" class="w-5 h-5 invert" alt="" aria-hidden="true" />
               </a>
-              <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="Instagram">
+              <a href="https://www.instagram.com/providencemsh/" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="Instagram">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" class="w-5 h-5 invert" alt="" aria-hidden="true" />
               </a>
-              <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="TikTok">
+              <a href="https://www.tiktok.com/@providence_msh?_r=1&_d=f240a3dbb007l5&sec_uid=MS4wLjABAAAAn1i_szpqEHWAGejM6VoziD3ZRE5ZP1THoXuM7jzHqaNt-k0dbj-o6MyzNmb48kLZ&share_author_id=7553947387610416148&sharer_language=en&source=h5_m&u_code=emg1ghejmmlc06&item_author_type=1&utm_source=copy&tt_from=copy&enable_checksum=1&utm_medium=ios&share_link_id=71B0118B-279C-4A30-92CB-F134C1CBC52E&user_id=7553947387610416148&sec_user_id=MS4wLjABAAAAn1i_szpqEHWAGejM6VoziD3ZRE5ZP1THoXuM7jzHqaNt-k0dbj-o6MyzNmb48kLZ&social_share_type=4&ug_btm=b8727,b0&utm_campaign=client_share&share_app_id=1233" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="TikTok">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" class="w-5 h-5 invert" alt="" aria-hidden="true" />
               </a>
               <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="X (Twitter)">
@@ -807,7 +897,6 @@
       </div>
     </div>
   </footer>
-
   <!-- 💬 WhatsApp Floating Button -->
   <a 
     class="fixed bottom-8 right-8 h-16 w-16 bg-secondary text-on-secondary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-all z-40" 
@@ -933,6 +1022,13 @@
       initMobileMenu();
       initCardInteractions();
       initServiceFiltering();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const yearSpan = document.getElementById('copyright-year');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
     });
   </script>
 
