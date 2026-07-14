@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Providence Multi-Specialty Hospital Asokoro | Excellence in Healthcare</title>
+  <title>Blog | Providence Multi-Specialty Hospital Asokoro</title>
+  <meta name="description" content="Stay tuned for health insights, medical news, and wellness tips from Providence Hospital's expert team." />
 
   <!-- 🔗 External Resources -->
-  <link rel="icon" type="image/png" sizes="180x180" href="/images/favicon.png"/>
-  <link rel="apple-touch-icon" href="/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -87,7 +86,7 @@
           },
           spacing: {
             "margin-desktop": "48px",
-            "margin-mobile": "10px",
+            "margin-mobile": "16px",
             "stack-sm": "8px",
             "stack-md": "16px",
             "stack-lg": "32px",
@@ -138,6 +137,59 @@
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.3);
     }
+    
+    /* Countdown Timer Styles - ENHANCED */
+    .countdown-item {
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+      border: 2px solid #e6deff;
+      border-radius: 1rem;
+      padding: 1.5rem 2rem;
+      min-width: 100px;
+      box-shadow: 0 4px 6px -1px rgba(28, 0, 96, 0.1), 0 2px 4px -1px rgba(28, 0, 96, 0.06);
+      transition: all 0.3s ease;
+    }
+    
+    .countdown-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(28, 0, 96, 0.15), 0 4px 6px -2px rgba(28, 0, 96, 0.1);
+      border-color: #cbbeff;
+    }
+    
+    .countdown-number {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      line-height: 1;
+      font-weight: 700;
+      color: #1c0060;
+      display: block;
+      line-height: 1.2;
+    }
+    
+    .countdown-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #484552;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.5rem;
+      display: block;
+    }
+    
+    @media (max-width: 768px) {
+      .countdown-item {
+        padding: 1rem 1.25rem;
+        min-width: 70px;
+      }
+      
+      .countdown-number {
+        font-size: 1.75rem;
+      }
+      
+      .countdown-label {
+        font-size: 0.75rem;
+      }
+    }
   </style>
 </head>
 
@@ -157,21 +209,21 @@
     <nav class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
       
       <!-- Logo -->
-    <div class="flex items-center gap-3">
-      <img 
-        src="/images/Providence logo.png" 
-        alt="Providence Hospital Logo" 
-        class="h-20 md:h-64 w-auto object-contain"
-      />
-    </div>
+      <div class="flex items-center gap-3">
+        <img 
+          src="/images/Providence logo.png" 
+          alt="Providence Hospital Logo" 
+          class="h-20 md:h-64 w-auto object-contain"
+        />
+      </div>
 
-      <!-- Desktop Navigation Links - FIXED: Changed text-label-md to font-body-md -->
+      <!-- Desktop Navigation Links -->
       <div class="hidden md:flex items-center gap-8">
-        <a class="text-primary border-b-2 border-primary pb-1 font-semibold font-body-md" href="/index.html">Home</a>
+        <a class="text-on-surface-variant font-medium font-body-md hover:text-primary transition-colors" href="/index.html">Home</a>
         <a class="text-on-surface-variant font-medium font-body-md hover:text-primary transition-colors" href="/services/services.html">Services</a>
         <a class="text-on-surface-variant font-medium font-body-md hover:text-primary transition-colors" href="/about/about.html">About Us</a>
         <a class="text-on-surface-variant font-medium font-body-md hover:text-primary transition-colors" href="/contact/contact.html">Contact</a>
-        <a class="text-on-surface-variant font-medium font-body-md hover:text-primary transition-colors" href="/Info/info.html" role="menuitem">Info</a>
+        <a class="text-primary border-b-2 border-primary pb-1 font-semibold font-body-md" href="/Info/info.html" role="menuitem" aria-current="page">Info</a>
       </div>
 
       <!-- Action Buttons -->
@@ -208,7 +260,7 @@
 
       <!-- Navigation Links -->
       <div class="flex flex-col gap-2">
-        <a class="bg-primary-fixed text-on-primary-fixed mx-4 flex items-center gap-4 px-4 py-3 rounded-lg font-medium" href="/index.html">
+        <a class="text-on-surface-variant hover:bg-surface-container mx-4 flex items-center gap-4 px-4 py-3 rounded-lg transition-colors font-medium" href="/index.html">
           <span class="material-symbols-outlined">home</span> Home
         </a>
         <a class="text-on-surface-variant hover:bg-surface-container mx-4 flex items-center gap-4 px-4 py-3 rounded-lg transition-colors font-medium" href="/services/services.html">
@@ -220,8 +272,8 @@
         <a class="text-on-surface-variant hover:bg-surface-container mx-4 flex items-center gap-4 px-4 py-3 rounded-lg transition-colors font-medium" href="/contact/contact.html">
           <span class="material-symbols-outlined">contact_support</span> Contact
         </a>
-        <a class="text-on-surface-variant hover:bg-surface-container mx-4 flex items-center gap-4 px-4 py-3 rounded-lg transition-colors font-medium" href="/Info/info.html">
-          <span class="material-symbols-outlined">news</span> Info
+        <a class="bg-primary-fixed text-on-primary-fixed mx-4 flex items-center gap-4 px-4 py-3 rounded-lg font-medium" href="/Info/info.html">
+          <span class="material-symbols-outlined">newspaper</span> Info
         </a>
       </div>
 
@@ -240,268 +292,71 @@
   <!-- Overlay for mobile menu -->
   <div class="fixed inset-0 bg-black/30 backdrop-blur-sm z-[65] hidden md:hidden" id="menu-overlay"></div>
 
-  <!-- 🦸 Hero Section -->
-  <section class="reveal relative  md:min-h-[100vh] flex items-center overflow-hidden">
-    <!-- Background Image + Gradient -->
-    <div class="absolute inset-0 z-0">
-      <img 
-        src="/images/heroimage (1).jpeg" 
-        alt="Providence Multi-Specialty Hospital Exterior" 
-        class="w-full h-full object-cover"
-      />
-      <div class="absolute inset-0 hero-gradient"></div>
-    </div>
-
-    <!-- Content -->
-    <div class="relative z-10 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop w-full">
-      <div class="max-w-2xl space-y-8">
-        
-        <!-- Badge -->
-        <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full font-label-md text-label-md">
-          <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-          </span>
-          Coordinated specialist care you can trust
-        </div>
-
-        <!-- Heading & Description -->
-        <h1 class="font-headline-xl text-[40px] md:text-headline-xl text-primary leading-[1.1]">
-          World-Class Healthcare in Asokoro
-        </h1>
-        <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-          Providence Multi-Specialty Hospital combines innovative medical technology with compassionate, patient-centered care.
-        </p>
-
-        <!-- Buttons -->
-        <div class="flex flex-wrap gap-4 pt-4">
-          <a 
-            class="bg-primary text-on-primary px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-primary/30 transition-all hover:-translate-y-1" 
-            href="https://wa.me/+2349088991164"
-          >
-            Speak to Someone
-          </a>
-          <a 
-            href="/booking/booking.html" 
-            class="bg-surface text-primary border border-outline px-8 py-4 rounded-xl font-semibold hover:bg-surface-container-low transition-all inline-block"
-          >
-            Click here to regiter
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 📊 Statistics Section -->
-  <section class="reveal py-12 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto md:-mt-24 relative z-20">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <!-- 📋 Main Content: Blog Coming Soon -->
+  <main class="min-h-[60vh] flex items-center justify-center px-margin-mobile md:px-margin-desktop py-20">
+    <div class="max-w-3xl mx-auto text-center reveal active">
       
-      <!-- Stat 1: Specialists -->
-      <div class="bg-white p-8 rounded-2xl shadow-[0_20px_40px_rgba(50,22,132,0.06)] border border-outline-variant/30 flex items-center gap-6 group hover:translate-y-[-4px] transition-all">
-        <div class="h-16 w-16 bg-primary-fixed rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
-          <span class="material-symbols-outlined text-[32px]">groups</span>
-        </div>
-        <div>
-          <div class="font-headline-lg text-headline-lg text-primary">50+</div>
-          <div class="font-label-md text-label-md text-on-surface-variant">Top Specialists</div>
+      <!-- Icon -->
+      <div class="mb-8">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10">
+          <span class="material-symbols-outlined text-primary text-[40px]" aria-hidden="true">newspaper</span>
         </div>
       </div>
-
-      <!-- Stat 2: Emergency Care -->
-      <div class="bg-white p-8 rounded-2xl shadow-[0_20px_40px_rgba(50,22,132,0.06)] border border-outline-variant/30 flex items-center gap-6 group hover:translate-y-[-4px] transition-all">
-        <div class="h-16 w-16 bg-secondary-container rounded-xl flex items-center justify-center text-on-secondary-container group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
-          <span class="material-symbols-outlined text-[32px]">health_and_safety</span>
-        </div>
-        <div>
-          <div class="font-headline-lg text-headline-lg text-primary">24/7</div>
-          <div class="font-label-md text-label-md text-on-surface-variant">Emergency Care</div>
-        </div>
-      </div>
-
-      <!-- Stat 3: Diagnostics -->
-      <div class="bg-white p-8 rounded-2xl shadow-[0_20px_40px_rgba(50,22,132,0.06)] border border-outline-variant/30 flex items-center gap-6 group hover:translate-y-[-4px] transition-all">
-        <div class="h-16 w-16 bg-tertiary-fixed rounded-xl flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
-          <span class="material-symbols-outlined text-[32px]">biotech</span>
-        </div>
-        <div>
-          <div class="font-headline-lg text-headline-lg text-primary">Modern</div>
-          <div class="font-label-md text-label-md text-on-surface-variant">Diagnostics</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ⚕️ Featured Services -->
-  <section class="reveal py-12 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
-    
-    <!-- Section Header -->
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
-      <div class="max-w-xl">
-        <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Our Medical Specialties</h2>
-        <p class="font-body-lg text-body-lg text-on-surface-variant">
-          Providence offers comprehensive care across multiple disciplines, providing our Asokoro community with integrated healthcare.
-        </p>
-      </div>
-      <a 
-        href="/services/services.html" 
-        class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all"
-      >
-        View All Services <span class="material-symbols-outlined">arrow_forward</span>
-      </a>
-    </div>
-
-    <!-- Services Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
       
-      <!-- Cardiology -->
-      <div class="bg-surface-container-low p-8 rounded-2xl border border-transparent hover:border-primary-fixed-dim hover:bg-white transition-all group">
-        <span class="material-symbols-outlined text-secondary text-[40px] mb-6 block" data-weight="fill">cardiology</span>
-        <h3 class="font-headline-md text-headline-md text-primary mb-3">Cardiology</h3>
-        <p class="font-body-sm text-on-surface-variant mb-6">Advanced heart care including specialized diagnostics.</p>
-        <div class="h-1 w-0 bg-primary group-hover:w-full transition-all duration-500"></div>
-      </div>
-
-      <!-- Pediatrics -->
-      <div class="bg-surface-container-low p-8 rounded-2xl border border-transparent hover:border-primary-fixed-dim hover:bg-white transition-all group">
-        <span class="material-symbols-outlined text-secondary text-[40px] mb-6 block" data-weight="fill">child_care</span>
-        <h3 class="font-headline-md text-headline-md text-primary mb-3">Pediatrics</h3>
-        <p class="font-body-sm text-on-surface-variant mb-6">Expert care for infants, children, and adolescents.</p>
-        <div class="h-1 w-0 bg-primary group-hover:w-full transition-all duration-500"></div>
-      </div>
-
-      <!-- Maternity -->
-      <div class="bg-surface-container-low p-8 rounded-2xl border border-transparent hover:border-primary-fixed-dim hover:bg-white transition-all group">
-        <span class="material-symbols-outlined text-secondary text-[40px] mb-6 block" data-weight="fill">pregnant_woman</span>
-        <h3 class="font-headline-md text-headline-md text-primary mb-3">Maternity</h3>
-        <p class="font-body-sm text-on-surface-variant mb-6">Holistic support from prenatal to postnatal care.</p>
-        <div class="h-1 w-0 bg-primary group-hover:w-full transition-all duration-500"></div>
-      </div>
-
-      <!-- Surgery -->
-      <div class="bg-surface-container-low p-8 rounded-2xl border border-transparent hover:border-primary-fixed-dim hover:bg-white transition-all group">
-        <span class="material-symbols-outlined text-secondary text-[40px] mb-6 block" data-weight="fill">neurology</span>
-        <h3 class="font-headline-md text-headline-md text-primary mb-3">Neurology</h3>
-        <p class="font-body-sm text-on-surface-variant mb-6">Specialized care for conditions affecting the nervous system.</p>
-        <div class="h-1 w-0 bg-primary group-hover:w-full transition-all duration-500"></div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 💡 Why Choose Us -->
-  <section class="reveal py-24 bg-primary text-on-primary overflow-hidden">
-    <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <!-- Heading -->
+      <h1 class="font-headline-xl text-headline-xl text-primary mb-4">
+        Our Blog is Coming Soon!
+      </h1>
       
-      <!-- Image Side -->
-      <div class="relative">
-        <div class="absolute -top-12 -left-12 w-64 h-64 bg-secondary/20 rounded-full blur-3xl"></div>
-        <img 
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6F2dKQuzZJj2zBhEySawrAHI0xhUJEhqIjn2c7pGckCfsiubckmTLJhwjIaQv1hZCtTkXw1sIAJ2StXn7eEInyg4xXufDp33m5Bo-V_znShZD19MJChRrHW90pJhYzPnLU6tdCdieedlyjjg2x-WELZnJfmZTQoXNpjj687XvqT6eBKhruYna8Cc_-uE0FFM6tLQ2Og-qGmERA0Vll0n0uRSzGRRTHM34V2pnnn3EGz55fnwNhAXeCOg72q2yZXacRBsW2T5ojugs" 
-          alt="Modern Medical Technology" 
-          class="relative z-10 rounded-3xl shadow-2xl w-full"
-        />
-        <div class="absolute -bottom-6 -right-6 bg-secondary p-8 rounded-2xl z-20">
-          <p class="font-headline-md text-headline-md text-white">MOTTO</p>
-          <p class="font-label-md text-label-md text-white/80">Inspire, Innovate and Care</p>
-        </div>
-      </div>
-
-      <!-- Content Side -->
-      <div class="space-y-10">
-        <div>
-          <h2 class="font-headline-lg text-headline-lg mb-6">Why Providence?</h2>
-          <p class="font-body-lg text-body-lg text-on-primary-container">
-            Providence is redefining healthcare in Abuja by combining modern innovation with locally trusted medical expertise, delivering coordinated multispecialty care under one roof.
-          </p>
-        </div>
-
-        <div class="space-y-6">
-          <!-- Feature 1 -->
-          <div class="flex gap-6">
-            <div class="flex-shrink-0 h-12 w-12 rounded-full border border-on-primary-container flex items-center justify-center">
-              <span class="material-symbols-outlined">lightbulb</span>
-            </div>
-            <div>
-              <h4 class="font-headline-md text-headline-md mb-2">Innovation</h4>
-              <p class="font-body-md text-on-primary-container">Telemedicine and advanced diagnostics for faster, more accurate results.</p>
-            </div>
-          </div>
-
-          <!-- Feature 2 -->
-          <div class="flex gap-6">
-            <div class="flex-shrink-0 h-12 w-12 rounded-full border border-on-primary-container flex items-center justify-center">
-              <span class="material-symbols-outlined">favorite</span>
-            </div>
-            <div>
-              <h4 class="font-headline-md text-headline-md mb-2">Community Trust</h4>
-              <p class="font-body-md text-on-primary-container">Serving the families of Abuja with integrity and world-class standards.</p>
-            </div>
-          </div>
-
-          <!-- Feature 3 -->
-          <div class="flex gap-6">
-            <div class="flex-shrink-0 h-12 w-12 rounded-full border border-on-primary-container flex items-center justify-center">
-              <span class="material-symbols-outlined">public</span>
-            </div>
-            <div>
-              <h4 class="font-headline-md text-headline-md mb-2">Global Standards</h4>
-              <p class="font-body-md text-on-primary-container">We adhere to globally recognized clinical protocols and best practices to ensure safe, consistent, and high-quality care for every patient.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 💬 Testimonials -->
-  <section class="reveal py-24 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
-    <h2 class="font-headline-lg text-headline-lg text-primary text-center mb-16">Trusted by the Community</h2>
-    
-    <div class="flex flex-col md:flex-row gap-8">
+      <!-- Description -->
+      <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-xl mx-auto">
+        We're crafting valuable health insights, wellness tips, and medical news just for you. Stay tuned for expert advice from Providence's healthcare team.
+      </p>
       
-      <!-- Testimonial 1 -->
-      <div class="flex-1 bg-white p-10 rounded-3xl shadow-sm border border-outline-variant/20 italic text-on-surface-variant relative">
-        <span class="material-symbols-outlined text-secondary/20 text-[80px] absolute top-4 left-4">format_quote</span>
-        <p class="font-body-md relative z-10 mb-8">
-          "The efficiency at Providence is unmatched. From initial contact to the final consultation, the experience was seamless and truly world-class."
-        </p>
-        <div class="flex items-center gap-4 relative z-10">
-          <img 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsFSNLahJlFDF5InjNjxL2pvmVtZt07f8wJ2aWaDu3-ECoAIc7vgG5O7QK0HyyYS0gUjG9aTuD5jX_IxOlogo3AJEjAob28EMcuVRg579b3xZAd5sk1W-F7V7wcQC1giBCH7wtLaAhQIjev8wz7YwP_-PJmQhUUc277ZLX_YdUowTe7tIPJH-Ptygy-3xxQIhn3cmbanXTOdLnekCTP5BZLe9zSmbKo39NRBsbw5Drl0VH-o9mTSWnQR3sK6yG601VEEuvjtgmUIua" 
-            alt="Amina Bello" 
-            class="w-12 h-12 rounded-full object-cover"
-          />
-          <div>
-            <p class="font-bold text-primary not-italic">Amina Bello</p>
-            <p class="text-[12px] font-medium not-italic">Asokoro Resident</p>
-          </div>
+      <!-- Countdown Timer -->
+      <div class="flex flex-wrap justify-center gap-4 md:gap-6 mb-12" id="countdown">
+        <div class="countdown-item">
+          <span class="countdown-number" id="days">00</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="hours">00</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="minutes">00</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="seconds">00</span>
+          <span class="countdown-label">Seconds</span>
         </div>
       </div>
-
-      <!-- Testimonial 2 -->
-      <div class="flex-1 bg-white p-10 rounded-3xl shadow-sm border border-outline-variant/20 italic text-on-surface-variant relative md:mt-12">
-        <span class="material-symbols-outlined text-secondary/20 text-[80px] absolute top-4 left-4">format_quote</span>
-        <p class="font-body-md relative z-10 mb-8">
-          "When we had an emergency, the Providence team was ready. Their compassion and professionalism saved my son's life. We are forever grateful."
+      
+      <!-- Notify Me CTA -->
+      <div class="space-y-4">
+        <p class="font-body-md text-body-md text-on-surface-variant">
+          Want to be notified when we launch?
         </p>
-        <div class="flex items-center gap-4 relative z-10">
-          <img 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRxNlmp7H3l4r2gUu339V1Bz_rbel6jPMjGFXi4ljRiR9qGQMdRUJ9mWPM8eLxlxiO_Qyu7G694IhHJf61HNk66OM2gc3ShnEBT5UAXthCzaSAji5b4cM7Pv8mKT5Fi5hji3-D5_vUHv8ftCqP8ATc-Uu-8U9I3H8gXsokXNl7S7ilIfqNEV_NxvokK7oOECDkkimeKXJj9gLP5UtLbZm5btIMvgrvJ5yhHcRAXrt_0S4crqArS7wOsi1tk_sAZBgOgabCWYWJdjW5" 
-            alt="Chidi Okafor" 
-            class="w-12 h-12 rounded-full object-cover"
-          />
-          <div>
-            <p class="font-bold text-primary not-italic">Chidi Okafor</p>
-            <p class="text-[12px] font-medium not-italic">Garki Resident</p>
-          </div>
-        </div>
+        <a 
+          href="https://wa.me/+2349088991164?text=Hi,%20I'd%20like%20to%20be%20notified%20when%20the%20Providence%20Blog%20launches!" 
+          class="inline-flex items-center gap-2 bg-secondary text-on-secondary px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-secondary/30 transition-all hover:-translate-y-1"
+        >
+          <span class="material-symbols-outlined">notifications</span>
+          Notify Me on WhatsApp
+        </a>
       </div>
-
+      
+      <!-- Optional: Return to Home -->
+      <div class="mt-12">
+        <a href="/index.html" class="text-primary font-medium hover:underline flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+          Return to Home Page
+        </a>
+      </div>
+      
     </div>
-  </section>
+  </main>
 
   <!-- 🦶 Footer -->
   <footer class="bg-tertiary text-on-tertiary w-full border-t border-white/10" role="contentinfo">
@@ -525,21 +380,19 @@
             Leading multi-specialty healthcare in Asokoro, Abuja. Providing advanced medical solutions with compassion and excellence.
           </p>
           <p class="font-label-md text-label-md text-on-tertiary-container mt-4">
-          © <span id="copyright-year"></span> Providence Multi-Specialty Hospital. All rights reserved.
-        </p>
+            © <span id="copyright-year"></span> Providence Multi-Specialty Hospital. All rights reserved.
+          </p>
         </div>
 
         <!-- Quick Links -->
         <div class="flex flex-col items-start md:items-center">
           <div class="flex flex-col gap-4">
-            <!-- FIXED: Changed font-label-lg to font-label-md -->
             <h3 class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed">Quick Links</h3>
             <nav class="flex flex-col gap-2" aria-label="Footer navigation">
               <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/index.html">Home</a>
               <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/about/about.html">About Us</a>
               <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/services/services.html">Services</a>
               <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/contact/contact.html">Contact</a>
-              <!-- <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/patient-portal/patient-portal.html">Patient Portal</a> -->
             </nav>
           </div>
         </div>
@@ -547,7 +400,6 @@
         <!-- Social & Contact -->
         <div class="flex flex-col gap-6">
           <div>
-            <!-- FIXED: Changed font-label-lg to font-label-md -->
             <h3 class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed mb-4">Contact Us</h3>
             <div class="flex flex-col gap-2">
               <div class="flex items-center gap-2 text-on-tertiary-container">
@@ -561,7 +413,6 @@
             </div>
           </div>
           <div>
-            <!-- FIXED: Changed font-label-lg to font-label-md -->
             <h3 class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed mb-4">Follow Us</h3>
             <div class="flex gap-4">
               <a href="https://web.facebook.com/providencemsh" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="Facebook">
@@ -587,7 +438,7 @@
   <!-- 💬 WhatsApp Floating Button -->
   <a 
     class="fixed bottom-8 right-8 h-16 w-16 bg-secondary text-on-secondary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-all z-40" 
-    href="https://wa.me/#"
+    href="https://wa.me/+2349088991164"
     aria-label="Chat on WhatsApp"
   >
     <span class="material-symbols-outlined text-[32px]">chat_bubble</span>
@@ -652,14 +503,43 @@
       }, { passive: true });
     }
 
+    // ===== 5. Countdown Timer =====
+    function initCountdown() {
+      // Set your launch date here (format: "Month Day, Year HH:MM:SS")
+      const launchDate = new Date("July 31, 2026 23:59:59").getTime();
+      
+      const countdown = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = launchDate - now;
+        
+        if (distance < 0) {
+          clearInterval(countdown);
+          document.getElementById('countdown').innerHTML = '<p class="font-body-lg text-body-lg text-primary font-bold">🎉 We\'re Live!</p>';
+          return;
+        }
+        
+        // Calculate time units
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        // Update DOM with zero-padded values
+        document.getElementById('days').textContent = String(days).padStart(2, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+      }, 1000);
+    }
+
     // ===== Initialize on DOM Ready =====
     document.addEventListener('DOMContentLoaded', () => {
       mobileMenu.init();
       initMicroInteractions();
       initStickyHeader();
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
+      initCountdown();
+      
+      // Auto-update copyright year
       const yearSpan = document.getElementById('copyright-year');
       if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();

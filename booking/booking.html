@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Appointment | Providence Multi-Specialty Hospital Asokoro</title>
+  <meta name="description" content="Book your appointment online in 3 simple steps. Secure payment, easy scheduling, and personalized care at Providence Hospital Asokoro." />
+
+  <!-- 🔗 External Resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <!-- 🎨 Tailwind Configuration (Standardized) -->
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#1c0060",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#e6deff",
+            "primary-fixed-dim": "#cbbeff",
+            "primary-container": "#321684",
+            "on-primary-container": "#9c88f4",
+            "on-primary-fixed": "#1d0061",
+            "on-primary-fixed-variant": "#4a339c",
+            secondary: "#006590",
+            "on-secondary": "#ffffff",
+            "secondary-fixed": "#c8e6ff",
+            "secondary-fixed-dim": "#88ceff",
+            "secondary-container": "#2fb8ff",
+            "on-secondary-container": "#004666",
+            "on-secondary-fixed": "#001e2e",
+            "on-secondary-fixed-variant": "#004c6e",
+            tertiary: "#1a1a22",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#e4e1ed",
+            "tertiary-fixed-dim": "#c7c5d0",
+            "tertiary-container": "#2f2f38",
+            "on-tertiary-container": "#9896a1",
+            "on-tertiary-fixed": "#1b1b23",
+            "on-tertiary-fixed-variant": "#46464f",
+            background: "#f8f9ff",
+            "on-background": "#0b1c30",
+            surface: "#f8f9ff",
+            "on-surface": "#0b1c30",
+            "surface-variant": "#d3e4fe",
+            "on-surface-variant": "#484552",
+            "surface-bright": "#f8f9ff",
+            "surface-dim": "#cbdbf5",
+            "surface-container": "#e5eeff",
+            "surface-container-low": "#eff4ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#dce9ff",
+            "surface-container-highest": "#d3e4fe",
+            "inverse-surface": "#213145",
+            "inverse-on-surface": "#eaf1ff",
+            "inverse-primary": "#cbbeff",
+            outline: "#797583",
+            "outline-variant": "#cac4d4",
+            error: "#ba1a1a",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "surface-tint": "#624db5",
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px",
+          },
+          spacing: {
+            "margin-desktop": "48px",
+            "margin-mobile": "16px",
+            "stack-sm": "8px",
+            "stack-md": "16px",
+            "stack-lg": "32px",
+            gutter: "24px",
+            unit: "4px",
+          },
+          fontFamily: {
+            "headline-xl": ["Poppins", "sans-serif"],
+            "headline-lg": ["Poppins", "sans-serif"],
+            "headline-lg-mobile": ["Poppins", "sans-serif"],
+            "headline-md": ["Poppins", "sans-serif"],
+            "body-lg": ["Poppins", "sans-serif"],
+            "body-md": ["Poppins", "sans-serif"],
+            "body-sm": ["Poppins", "sans-serif"],
+            "label-lg": ["Poppins", "sans-serif"],
+            "label-md": ["Poppins", "sans-serif"],
+          },
+          fontSize: {
+            "headline-xl": ["40px", { lineHeight: "52px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "600" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-sm": ["16px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-lg": ["14px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", fontWeight: "500" }],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- ✏️ Custom Styles -->
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      user-select: none;
+    }
+    
+    /* Step connector line */
+    .step-connector {
+      position: absolute;
+      top: 40px;
+      left: calc(50% + 40px);
+      right: calc(-50% + 40px);
+      height: 2px;
+      background: linear-gradient(to right, #cbbeff, #e6deff);
+      z-index: 0;
+    }
+    
+    @media (max-width: 768px) {
+      .step-connector {
+        display: none;
+      }
+    }
+    
+    /* Pulse animation for CTA */
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(28, 0, 96, 0.4); }
+      70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(28, 0, 96, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(28, 0, 96, 0); }
+    }
+    .pulse-cta {
+      animation: pulse-ring 2.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+    }
+
+    /* HMO Logo Slider Styles */
+    .logo-slider {
+    display: flex;
+    animation: scroll-left 30s linear infinite;
+    width: max-content;
+    }
+
+    .logo-slider:hover {
+    animation-play-state: paused;
+    }
+
+    .logo-item {
+    flex: 0 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7;
+    }
+
+    .logo-item:hover {
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
+    }
+
+    .logo-item img {
+    max-height: 40px;
+    max-width: 120px;
+    object-fit: contain;
+    }
+
+    @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md">
+
+  <!-- 🚨 Emergency Banner -->
+  <div class="bg-primary text-on-primary py-2 px-margin-mobile md:px-margin-desktop flex justify-between items-center text-[12px] font-medium sticky top-0 z-[60]">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-[18px]">emergency</span>
+      <span>Emergency: +234 90 8899 1164</span>
+    </div>
+    <div class="hidden md:block">Asokoro • Abuja • Nigeria</div>
+  </div>
+
+  <!-- 🧭 Header / Navigation -->
+  <header class="bg-surface/90 backdrop-blur-md sticky top-[36px] z-50 border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+    <nav class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
+      
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <img 
+          src="/images/Providence logo.png" 
+          alt="Providence Hospital Logo" 
+          class="h-20 md:h-64 w-auto object-contain"
+        />
+      </div>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a class="text-on-surface-variant font-medium font-body-md hover:text-primary transition-colors" href="/index.html">Home</a>
+        <a class="text-on-surface-variant font-medium font-body-md hover:text-primary transition-colors" href="/services/services.html">Services</a>
+        <a class="text-on-surface-variant font-medium font-body-md hover:text-primary transition-colors" href="/about/about.html">About Us</a>
+        <a class="text-on-surface-variant font-medium font-body-md hover:text-primary transition-colors" href="/contact/contact.html">Contact</a>
+        <a class="text-on-surface-variant font-medium font-body-md hover:text-primary transition-colors" href="/Info/info.html">Info</a>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-4">
+        <a 
+          class="bg-primary text-on-primary px-4 md:px-6 py-2.5 rounded-full font-label-md text-label-md hover:opacity-90 transition-all flex items-center gap-2 shadow-lg hover:shadow-primary/20" 
+          href="https://wa.me/+2349088991164"
+        >
+          <span class="hidden sm:inline">Speak to Someone</span>
+          <span class="sm:hidden">Contact</span>
+        </a>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="md:hidden text-primary p-2" id="mobile-menu-btn" aria-label="Open menu">
+          <span class="material-symbols-outlined text-[28px]">menu</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 📱 Mobile Navigation Sidebar -->
+  <div 
+    class="fixed inset-y-0 right-0 w-64 bg-surface z-[70] shadow-2xl transform translate-x-full transition-transform duration-300 md:hidden" 
+    id="mobile-menu"
+  >
+    <div class="flex flex-col h-full py-6">
+      <div class="px-6 mb-8 flex justify-between items-center">
+        <span class="font-headline-md text-primary font-bold">Providence</span>
+        <button class="text-primary p-1" id="close-menu-btn" aria-label="Close menu">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <a class="text-on-surface-variant hover:bg-surface-container mx-4 flex items-center gap-4 px-4 py-3 rounded-lg transition-colors font-medium" href="/index.html">
+          <span class="material-symbols-outlined">home</span> Home
+        </a>
+        <a class="text-on-surface-variant hover:bg-surface-container mx-4 flex items-center gap-4 px-4 py-3 rounded-lg transition-colors font-medium" href="/services/services.html">
+          <span class="material-symbols-outlined">medical_services</span> Services
+        </a>
+        <a class="text-on-surface-variant hover:bg-surface-container mx-4 flex items-center gap-4 px-4 py-3 rounded-lg transition-colors font-medium" href="/about/about.html">
+          <span class="material-symbols-outlined">info</span> About Us
+        </a>
+        <a class="text-on-surface-variant hover:bg-surface-container mx-4 flex items-center gap-4 px-4 py-3 rounded-lg transition-colors font-medium" href="/contact/contact.html">
+          <span class="material-symbols-outlined">contact_support</span> Contact
+        </a>
+        <a class="text-on-surface-variant hover:bg-surface-container mx-4 flex items-center gap-4 px-4 py-3 rounded-lg transition-colors font-medium" href="/Info/info.html">
+          <span class="material-symbols-outlined">newspaper</span> Info
+        </a>
+      </div>
+
+      <div class="mt-auto px-4 pb-4">
+        <a 
+          class="w-full bg-primary text-on-primary py-3 rounded-xl flex items-center justify-center gap-2 font-semibold" 
+          href="https://wa.me/+2349088991164"
+        >
+          <span class="material-symbols-outlined">chat</span> Speak to Someone
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="fixed inset-0 bg-black/30 backdrop-blur-sm z-[65] hidden md:hidden" id="menu-overlay"></div>
+
+  <!-- 📋 Main Content -->
+  <main>
+
+    <!-- 🎯 Hero Section -->
+    <section class="bg-surface-container-low py-16 md:py-24 px-margin-mobile md:px-margin-desktop">
+      <div class="max-w-[1280px] mx-auto text-center reveal active">
+        <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full font-label-md text-label-md mb-6">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+          </span>
+          Quick & Secure Online Booking
+        </div>
+        <h1 class="font-headline-xl text-headline-xl text-primary mb-4">
+          Register with us in 3 Simple Steps
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-4">
+          Complete your registration with Providence Multi-Specialty Hospital with ease. Our streamlined online registration process ensures you receive prompt, personalized care even before arriving at our facility.
+        </p>
+
+        <!-- Paystack CTA Button -->
+        <a 
+          href="https://paystack.shop/pay/providencemsh" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="pulse-cta inline-flex items-center gap-3 bg-white text-primary px-10 py-5 rounded-2xl font-headline-md text-headline-md font-bold shadow-2xl hover:shadow-white/30 hover:-translate-y-1 transition-all"
+        >
+          <span class="material-symbols-outlined text-[28px]">payments</span>
+          Proceed to Paystack
+          <span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- 📝 Booking Process Steps -->
+    <section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop">
+      <div class="max-w-[1280px] mx-auto">
+        
+        <!-- Section Header -->
+        <div class="text-center mb-16 reveal active">
+          <h2 class="font-headline-lg text-headline-lg text-primary mb-3">How It Works</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant">Follow these simple steps to complete your registration</p>
+        </div>
+
+        <!-- Steps Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative">
+          
+          <!-- Step 1: Make Payment -->
+          <div class="reveal active relative">
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-outline-variant/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+              <!-- Step Number Badge --> 
+              <div class="flex items-center gap-4 mb-6 justify-between">
+                <div class="w-14 h-14 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-md text-headline-md font-bold shadow-lg shadow-primary/20">
+                  1
+                </div>
+                <div class="h-[2px] flex-1 bg-gradient-to-r from-primary/30 to-transparent md:block hidden"></div>
+                  <!-- Icon -->
+              <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-primary text-[32px]">payments</span>
+              </div>
+              </div>
+                          
+              
+              <!-- Content -->
+              <h3 class="font-headline-md text-headline-md text-primary mb-3">Make Payment</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Complete your registration fee payment securely via <strong>Paystack</strong>. We accept all major cards and bank transfers for your convenience.
+              </p>
+              
+              <!-- Mini CTA -->
+              <div class="mt-auto pt-6">
+                <a 
+                  href="https://paystack.com/pay/providence-booking" 
+                  target="_blank"
+                  class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
+                >
+                  Pay Now <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Fill Registration Form -->
+          <div class="reveal active relative">
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-outline-variant/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+              <!-- Step Number Badge -->
+              <div class="flex items-center gap-4 mb-6 justify-between">
+                <div class="w-14 h-14 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-md text-headline-md font-bold shadow-lg shadow-primary/20">
+                  2
+                </div>
+                <div class="h-[2px] flex-1 bg-gradient-to-r from-primary/30 to-transparent md:block hidden"></div>
+                              <!-- Icon -->
+                <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6">
+                    <span class="material-symbols-outlined text-secondary text-[32px]">description</span>
+                </div>
+              </div>
+              
+
+              
+              <!-- Content -->
+              <h3 class="font-headline-md text-headline-md text-primary mb-3">Fill Registration Form</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                After payment, you'll be automatically redirected to our <strong>Google Form</strong>. Fill in your details accurately — including your HMO or insurance provider and HMO number.
+              </p>
+              
+              <!-- Info Note -->
+              <div class="mt-auto pt-6 flex items-start gap-2 text-on-surface-variant">
+                <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">info</span>
+                <p class="font-body-sm text-body-sm">Ensure all information is correct for faster processing.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Confirmation & Visit -->
+          <div class="reveal active relative">
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-outline-variant/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+              <!-- Step Number Badge -->
+              <div class="flex items-center gap-4 mb-6 justify-between h-auto">
+                <div class="w-14 h-14 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-md text-headline-md font-bold shadow-lg shadow-primary/20">
+                  3
+                </div>
+                <div class="h-[2px] flex-1 bg-gradient-to-r from-primary/30 to-transparent md:block hidden"></div>
+                 <!-- Icon -->
+                <div class="w-16 h-16 rounded-2xl bg-secondary-container/30 flex items-center justify-center mb-6">
+                    <span class="material-symbols-outlined text-secondary text-[32px]">event_available</span>
+                </div>
+              </div>
+              
+ 
+              
+              <!-- Content -->
+              <h3 class="font-headline-md text-headline-md text-primary mb-3">Confirmation & Visit</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Our team will contact you to confirm your registration. We will help you schedule an appointment at the hospital at <strong>preferred time</strong> — no long queues, just quality seervice.
+              </p>
+              
+              <!-- Success Badge -->
+              <div class="mt-auto p-6 inline-flex items-center gap-2 bg-secondary/10 text-secondary px-3 py-1.5 rounded-full font-label-md text-label-md w-fit">
+                <span class="material-symbols-outlined text-[16px]">verified</span>
+                Priority Service
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 🏥 HMO / Insurance Patients Section -->
+    <section class="py-16 md:py-20 px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+      <div class="max-w-[1280px] mx-auto reveal active">
+        <div class="bg-white rounded-3xl shadow-sm border border-outline-variant/30 overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-5 gap-0">
+            
+            <!-- Left: Colored Accent -->
+            <div class="lg:col-span-2 bg-gradient-to-br from-primary to-primary-container p-8 md:p-12 text-on-primary flex flex-col justify-center">
+              <div class="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-white text-[32px]">verified_user</span>
+              </div>
+              <h2 class="font-headline-lg text-headline-lg mb-4">HMO & Insurance Patients</h2>
+              <p class="font-body-md text-body-md opacity-90">
+                Special streamlined process for our insured patients.
+              </p>
+            </div>
+            
+            <!-- Right: Content -->
+            <div class="lg:col-span-3 p-8 md:p-12">
+              <h3 class="font-headline-md text-headline-md text-primary mb-6">How It Works for You</h3>
+              
+              <div class="space-y-5">
+                <!-- Item 1 -->
+                <div class="flex items-start gap-4 mb-6">
+                  <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                  </div>
+                  <div>
+                    <h4 class="font-label-lg text-label-lg text-primary mb-3">Submit Your Details</h4>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Fill out the registration form with your insurance/HMO information and preferred provider.
+                    </p>
+                  </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="flex items-start gap-4 mb-6">
+                  <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <span class="material-symbols-outlined text-secondary text-[20px]">sync</span>
+                  </div>
+                  <div>
+                    <h4 class="font-label-lg text-label-lg text-primary mb-3">Verification Process</h4>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                      We confirm your insurance details directly with your provider to ensure coverage eligibility.
+                    </p>
+                  </div>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="flex items-start gap-4 mb-6">
+                  <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <span class="material-symbols-outlined text-secondary text-[20px]">notifications_active</span>
+                  </div>
+                  <div>
+                    <h4 class="font-label-lg text-label-lg text-primary mb-3">Get Notified</h4>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Once confirmed, we'll alert you to schedule an appoitment before your arrival <strong>no long waiting times</strong>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 🏥 HMO Partners Logo Slider -->
+                <section class="py-12 md:py-16 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest reveal active">
+                <div class="max-w-[1280px] mx-auto">
+                    <div class="text-center mb-8 md:mb-12">
+                    <h3 class="font-headline-md text-headline-md text-primary mb-2">Trusted by Leading HMOs</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                        We accept all major health insurance plans and work with Nigeria's top HMO providers for seamless billing.
+                    </p>
+                    </div>
+                    
+                    <!-- Logo Slider Container -->
+                    <div class="relative overflow-hidden">
+                    <!-- Gradient fade edges -->
+                    <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-surface-container-lowest to-transparent z-10"></div>
+                    <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-surface-container-lowest to-transparent z-10"></div>
+                    
+                    <!-- Slider Track -->
+                    <div class="logo-slider">
+                        <!-- Logos Set 1 -->
+                        <div class="logo-item"><img src="/images/Hygia.png" alt="Hygeia HMO" /></div>
+                        <div class="logo-item"><img src="/images/RelianceHMO.png" alt="Reliance HMO" /></div>
+                        <div class="logo-item"><img src="/images/AXA MansardHMO.png" alt="AXA Mansard" /></div>
+                        <div class="logo-item"><img src="/images/NEM Insurance.png" alt="NEM Insurance" /></div>
+                        <div class="logo-item"><img src="/images/BUPAHMO.png" alt="BUPA" /></div>
+                        <div class="logo-item"><img src="/images/CIGNA.png" alt="CIGNA" /></div>
+                        <div class="logo-item"><img src="/images/Avon HMO.png" alt="Avon HMO" /></div>
+                        <div class="logo-item"><img src="/images/Redcare HMO.png" alt="Redcare HMO" /></div>
+                        
+                        <!-- Logos Set 2 (Duplicate for seamless infinite scroll) -->
+                        <div class="logo-item"><img src="/images/Hygia.png" alt="Hygeia HMO" /></div>
+                        <div class="logo-item"><img src="/images/RelianceHMO.png" alt="Reliance HMO" /></div>
+                        <div class="logo-item"><img src="/images/AXA MansardHMO.png" alt="AXA Mansard" /></div>
+                        <div class="logo-item"><img src="/images/NEM Insurance.png" alt="NEM Insurance" /></div>
+                        <div class="logo-item"><img src="/images/BUPAHMO.png" alt="BUPA" /></div>
+                        <div class="logo-item"><img src="/images/CIGNA.png" alt="CIGNA" /></div>
+                        <div class="logo-item"><img src="/images/Avon HMO.png" alt="Avon HMO" /></div>
+                        <div class="logo-item"><img src="/images/Redcare HMO.png" alt="Redcare HMO" /></div>
+                    </div>
+                    </div>
+                    
+                    <!-- CTA below slider -->
+                    <div class="text-center mt-8">
+                    <a 
+                        href="mailto:hmo@providencemsh.com?subject=Insurance%20Inquiry" 
+                        class="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+                    >
+                        Not seeing your HMO? Contact us <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                    </div>
+                </div>
+                </section>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 💳 Main CTA Section -->
+    <section class="py-20 md:py-28 px-margin-mobile md:px-margin-desktop bg-gradient-to-br from-primary via-primary-container to-primary relative overflow-hidden">
+      <!-- Decorative Elements -->
+      <div class="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      <div class="absolute bottom-0 left-0 w-72 h-72 bg-white/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+      
+      <div class="max-w-3xl mx-auto text-center relative z-10 reveal active">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm mb-8">
+          <span class="material-symbols-outlined text-white text-[40px]">calendar_month</span>
+        </div>
+        
+        <h2 class="font-headline-xl text-headline-xl text-white mb-4">
+          Ready to Book Your Appointment?
+        </h2>
+        <p class="font-body-lg text-body-lg text-white/90 mb-10 max-w-2xl mx-auto">
+          Start your journey to better health today. Complete your payment securely and let our team take care of the rest.
+        </p>
+        
+        <!-- Paystack CTA Button -->
+        <a 
+          href="https://paystack.com/pay/providence-booking" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="pulse-cta inline-flex items-center gap-3 bg-white text-primary px-10 py-5 rounded-2xl font-headline-md text-headline-md font-bold shadow-2xl hover:shadow-white/30 hover:-translate-y-1 transition-all"
+        >
+          <span class="material-symbols-outlined text-[28px]">payments</span>
+          Proceed to Paystack
+          <span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+        </a>
+        
+        <!-- Trust Badges -->
+        <div class="mt-10 flex flex-wrap justify-center items-center gap-6 text-white/80">
+          <div class="flex items-center gap-2 font-label-md text-label-md">
+            <span class="material-symbols-outlined text-[18px]">lock</span>
+            Secure Payment
+          </div>
+          <div class="flex items-center gap-2 font-label-md text-label-md">
+            <span class="material-symbols-outlined text-[18px]">speed</span>
+            Instant Confirmation
+          </div>
+          <div class="flex items-center gap-2 font-label-md text-label-md">
+            <span class="material-symbols-outlined text-[18px]">support_agent</span>
+            24/7 Support
+          </div>
+        </div>
+        
+        <!-- Need Help -->
+        <div class="mt-10 pt-8 border-t border-white/20">
+          <p class="font-body-sm text-body-sm text-white/80 mb-3">Need assistance with your booking?</p>
+          <a 
+            href="https://wa.me/+2349088991164" 
+            class="inline-flex items-center gap-2 text-white font-semibold hover:gap-3 transition-all"
+          >
+            <span class="material-symbols-outlined text-[18px]">chat</span>
+            Chat with us on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ❓ FAQ Section -->
+    <section class="py-16 md:py-20 px-margin-mobile md:px-margin-desktop">
+      <div class="max-w-[900px] mx-auto reveal active">
+        <div class="text-center mb-12">
+          <h2 class="font-headline-lg text-headline-lg text-primary mb-3">Frequently Asked Questions</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant">Everything you need to know about our registration process</p>
+        </div>
+        
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <details class="group bg-white rounded-xl border border-outline-variant/30 overflow-hidden">
+            <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-surface-container-low transition-colors">
+              <h3 class="font-label-lg text-label-lg text-primary pr-4">How much is the registration fee?</h3>
+              <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-on-surface-variant font-body-md mt-6">
+              Registration fees is 5000 Naira only. You'll see the exact amount on the Paystack payment page before completing your transaction. Note that this fee is non-refundable, and doess not cover for initial or specialist consultation.
+            </div>
+          </details>
+          
+          <!-- FAQ 2 -->
+          <details class="group bg-white rounded-xl border border-outline-variant/30 overflow-hidden">
+            <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-surface-container-low transition-colors">
+              <h3 class="font-label-lg text-label-lg text-primary pr-4">How long does it take to get a confirmation?</h3>
+              <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-on-surface-variant font-body-md mt-6">
+              For self-pay patients, confirmation is usually within a few hours. For HMO/insurance patients, verification may take 2 to 3  hours depending on your provider's response time.
+            </div>
+          </details>
+          
+          <!-- FAQ 3 -->
+          <details class="group bg-white rounded-xl border border-outline-variant/30 overflow-hidden">
+            <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-surface-container-low transition-colors">
+              <h3 class="font-label-lg text-label-lg text-primary pr-4">What payment methods do you accept?</h3>
+              <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-on-surface-variant font-body-md mt-6">
+              Through Paystack, we accept all major debit/credit cards (Visa, Mastercard, Verve), bank transfers, and USSD payments. All transactions are 100% secure.
+            </div>
+          </details>
+          
+          <!-- FAQ 4 -->
+          <details class="group bg-white rounded-xl border border-outline-variant/30 overflow-hidden">
+            <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-surface-container-low transition-colors">
+              <h3 class="font-label-lg text-label-lg text-primary pr-4">How do I schedule an appointment after registration?</h3>
+              <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-6 pb-6 text-on-surface-variant font-body-md mt-6">
+              Simple! after your registration is confirmed, our team will contact you to schedule an appointment at your preferred time depending on the specialist's availability. You can also reach out to us directly via WhatsApp or phone for scheduling assistance.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 🦶 Footer -->
+  <footer class="bg-tertiary text-on-tertiary w-full border-t border-white/10" role="contentinfo">
+    <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+        
+        <!-- Brand Info -->
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-3">
+            <img 
+              alt="Providence Logo" 
+              class="h-10 w-10 object-contain brightness-0 invert" 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDflWcI1Z6zU5SEv69rw8rx6X_H3tgubP7YL5yiFUdGRFZLtyxvKEo8cJzj6ala8dy7HcUMxZZpEUDv1vVrU71Nw78Ji4KMb6nzGhzmhwU_4XHF_rk4LWO4rszDFbU0JaeJfseNh7Di4D5iQvjqqJsZIJuz2XLnBt2sO1Yi-oZDLtnyr4vtLEgIfp9sm07-A_N5CRa0EQMj_c5geFHznDQ48asZoTe1pHD7IhAwida7crw_tjCjCmirQVBBc59rIv4nNKcbH8m-hgXL"
+              loading="lazy"
+              width="40"
+              height="40"
+            />
+            <span class="font-headline-md text-headline-md font-bold">Providence MSH</span>
+          </div>
+          <p class="font-body-sm text-on-tertiary-container max-w-xs">
+            Leading multi-specialty healthcare in Asokoro, Abuja. Providing advanced medical solutions with compassion and excellence.
+          </p>
+          <p class="font-label-md text-label-md text-on-tertiary-container mt-4">
+            © <span id="copyright-year"></span> Providence Multi-Specialty Hospital. All rights reserved.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex flex-col items-start md:items-center">
+          <div class="flex flex-col gap-4">
+            <h3 class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed">Quick Links</h3>
+            <nav class="flex flex-col gap-2" aria-label="Footer navigation">
+              <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/index.html">Home</a>
+              <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/about/about.html">About Us</a>
+              <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/services/services.html">Services</a>
+              <a class="font-body-sm text-on-tertiary-container hover:text-secondary-fixed transition-colors" href="/contact/contact.html">Contact</a>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Social & Contact -->
+        <div class="flex flex-col gap-6">
+          <div>
+            <h3 class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed mb-4">Contact Us</h3>
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center gap-2 text-on-tertiary-container">
+                <span class="material-symbols-outlined text-sm" aria-hidden="true">location_on</span>
+                <span class="font-body-sm">No. 16, Mary Slessor Street, Off Udo Udoma Street, Abuja, Nigeria</span>
+              </div>
+              <div class="flex items-center gap-2 text-on-tertiary-container">
+                <span class="material-symbols-outlined text-sm" aria-hidden="true">call</span>
+                <a href="tel:+2349088991164" class="font-body-sm hover:underline">+234 90 8899 1164</a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-label-md text-label-md uppercase tracking-wider text-secondary-fixed mb-4">Follow Us</h3>
+            <div class="flex gap-4">
+              <a href="https://web.facebook.com/providencemsh" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="Facebook">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" class="w-5 h-5 invert" alt="" aria-hidden="true" />
+              </a>
+              <a href="https://www.instagram.com/providencemsh/" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="Instagram">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" class="w-5 h-5 invert" alt="" aria-hidden="true" />
+              </a>
+              <a href="https://www.tiktok.com/@providence_msh" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="TikTok">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" class="w-5 h-5 invert" alt="" aria-hidden="true" />
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="X (Twitter)">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg" class="w-5 h-5 invert" alt="" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- 💬 WhatsApp Floating Button -->
+  <a 
+    class="fixed bottom-8 right-8 h-16 w-16 bg-secondary text-on-secondary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-all z-40" 
+    href="https://wa.me/+2349088991164"
+    aria-label="Chat on WhatsApp"
+  >
+    <span class="material-symbols-outlined text-[32px]">chat_bubble</span>
+  </a>
+
+  <!-- 🧠 JavaScript -->
+  <script>
+    // ===== 1. Scroll Animations =====
+    if (typeof ScrollReveal !== 'undefined') {
+      ScrollReveal().reveal('.reveal', {
+        delay: 200,
+        distance: '50px',
+        duration: 800,
+        origin: 'bottom',
+        interval: 100,
+        easing: 'ease-in-out',
+        mobile: true
+      });
+    }
+
+    // ===== 2. Mobile Menu Toggle =====
+    const mobileMenu = {
+      btn: document.getElementById('mobile-menu-btn'),
+      close: document.getElementById('close-menu-btn'),
+      menu: document.getElementById('mobile-menu'),
+      overlay: document.getElementById('menu-overlay'),
+      toggle() {
+        this.menu?.classList.toggle('translate-x-full');
+        this.overlay?.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden');
+      },
+      init() {
+        this.btn?.addEventListener('click', () => this.toggle());
+        this.close?.addEventListener('click', () => this.toggle());
+        this.overlay?.addEventListener('click', () => this.toggle());
+      }
+    };
+
+    // ===== 3. Button Micro-interactions =====
+    function initMicroInteractions() {
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mousedown', () => el.classList.add('scale-95'));
+        el.addEventListener('mouseup', () => el.classList.remove('scale-95'));
+        el.addEventListener('mouseleave', () => el.classList.remove('scale-95'));
+      });
+    }
+
+    // ===== 4. Sticky Header Effect =====
+    function initStickyHeader() {
+      const header = document.querySelector('header');
+      window.addEventListener('scroll', () => {
+        if (!header) return;
+        if (window.scrollY > 50) {
+          header.classList.add('shadow-md');
+          header.classList.remove('shadow-sm');
+        } else {
+          header.classList.add('shadow-sm');
+          header.classList.remove('shadow-md');
+        }
+      }, { passive: true });
+    }
+
+    // ===== Initialize on DOM Ready =====
+    document.addEventListener('DOMContentLoaded', () => {
+      mobileMenu.init();
+      initMicroInteractions();
+      initStickyHeader();
+      
+      // Auto-update copyright year
+      const yearSpan = document.getElementById('copyright-year');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
+
+</body>
+</html>
